@@ -1,0 +1,36 @@
+.header {
+  padding: 25px 50px;
+}
+
+.header>nav {
+  display: flex;
+  direction: rtl;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.content>a {
+  padding-left: 32px;
+  width: 60px;
+  height: 30px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  text-decoration: none;
+  color: white;
+}
+
+.content>a:hover {
+  color: #F3E845;
+  cursor: pointer;
+}
+
+.register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+  padding: 5px;
+}
