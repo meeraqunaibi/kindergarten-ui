@@ -1,5 +1,5 @@
 import './hero.css';
-import bus from '../images/bus.svg';
+import bus from '../../../images/bus.svg';
 import Button from '../button/button.component';
 const Hero = () => {
   return (
