@@ -1,0 +1,45 @@
+.footer{
+      display: flex;
+       justify-content: space-around;
+       direction: rtl;
+}
+.footer-content{
+  font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 44px;
+    color: #0A1045;
+    padding: 5px;
+}
+.li{
+  font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 20px;
+          direction: rtl;
+}
+.email{
+  list-style-image: url("../../../images/email.svg");
+}
+.phone{
+  list-style-image: url("../../../images/phone.svg");
+  margin-left: 65px;
+}
+.location{
+  list-style-image: url("../../../images/location.svg");
+    margin-left: 90px;
+}
+hr{
+  width: 83%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #6335F8;
+}
+.light{
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 120px;
+}

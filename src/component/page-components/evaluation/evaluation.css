@@ -1,0 +1,48 @@
+.eva {
+  position: relative;
+}
+
+.rate {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 58px;
+  text-align: center;
+  letter-spacing: 0.2px;
+  text-transform: capitalize;
+  color: #212121;
+}
+
+.opinion {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 54px;
+  text-align: center;
+  letter-spacing: 0.2px;
+  text-transform: capitalize;
+  color: #424242;
+}
+
+.pre {
+  position: absolute;
+  left: 440px;
+  top: 105px;
+}
+
+.next {
+  position: absolute;
+  right: 440px;
+  top: 103px;
+}
+.rates{
+  border: none;
+    width: 40px;
+    height: 40px;
+    background: white;
+}
+.rates:hover{
+  cursor: pointer;
+}

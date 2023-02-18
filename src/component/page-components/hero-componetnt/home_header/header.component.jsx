@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import './header.css';
-import logo from '../../../images/logo.svg';
+import logo from '../../../../images/logo.svg';
 import Button from "../button/button.component";
 
 const HomeHeader = () => {
