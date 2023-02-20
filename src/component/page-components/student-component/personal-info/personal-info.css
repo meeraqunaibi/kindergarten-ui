@@ -1,0 +1,34 @@
+.personal-info {
+  width: 400px;
+  height: 285px;
+  margin: 0 5px;
+}
+
+.edit-btn {
+  border: none;
+  background-color: white;
+}
+
+.person {
+  display: flex;
+  justify-content: space-between;
+}
+
+.person>div {
+  font-family: 'Lexend';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  color: #8C6DFD;
+  padding-right: 8px;
+}
+.person>span{
+  font-family: 'Lexend';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;  
+    text-align: right;
+    color:#202020;
+}

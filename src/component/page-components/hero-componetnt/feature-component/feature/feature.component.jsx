@@ -1,7 +1,7 @@
 import './feature.css';
-import comfort from '../../../../images/comfort.svg';
-import fun from '../../../../images/fun.svg';
-import modern from '../../../../images/modern.svg';
+import comfort from '../../../../../images/comfort.svg';
+import fun from '../../../../../images/fun.svg';
+import modern from '../../../../../images/modern.svg';
 import FeatureName from '../feature-name/feature-name.component';
 const Feature = () => {
   return (

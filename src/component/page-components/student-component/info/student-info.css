@@ -1,0 +1,46 @@
+.box-info {
+  width: 410px;
+  height: 545px;
+  background: #FFFFFF;
+  border-radius: 15px;
+  margin: 0px 80px;
+}
+
+.student-img {
+  border-radius: 100px;
+  width: 120px;
+  height: 120px;
+  margin: 15px 15px;
+}
+
+.student-introduction {
+  display: flex;
+}
+
+.student-class {
+  display: block;
+}
+
+.information {
+  padding: 55px 12px;
+}
+
+.student-name {
+  font-family: 'Lexend';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 28px;
+  text-align: right;
+  color: #202020;
+}
+
+.student-class {
+  font-family: 'Lexend';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 18px;
+  text-align: right;
+  color: #8B8B8B;
+}

@@ -22,14 +22,14 @@
           direction: rtl;
 }
 .email{
-  list-style-image: url("../../../images/email.svg");
+  list-style-image: url("../../../../images/email.svg");
 }
 .phone{
-  list-style-image: url("../../../images/phone.svg");
+  list-style-image: url("../../../../images/phone.svg");
   margin-left: 65px;
 }
 .location{
-  list-style-image: url("../../../images/location.svg");
+  list-style-image: url("../../../../images/location.svg");
     margin-left: 90px;
 }
 hr{

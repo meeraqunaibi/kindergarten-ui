@@ -1,5 +1,5 @@
-import advbus from '../../../../images/advbus.svg';
-import Button from '../../hero-componetnt/button/button.component';
+import advbus from '../../../../../images/advbus.svg';
+import Button from '../../button/button.component';
 import './adv.css';
 const CallToAction = () => {
   return (

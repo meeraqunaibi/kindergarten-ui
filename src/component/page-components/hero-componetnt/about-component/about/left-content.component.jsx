@@ -1,4 +1,4 @@
-import abc from '../../../../images/abc.svg';
+import abc from '../../../../../images/abc.svg';
 import Content from '../content/conten.component';
 import './left-content.css';
 const LeftContent = () => {

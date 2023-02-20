@@ -1,0 +1,27 @@
+.end>h1 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 68px;
+  letter-spacing: 1.2px;
+  text-transform: capitalize;
+  color: #000000;
+  padding: 210px 0px;
+}
+
+.end {
+  width: 500px;
+  height: 500px;
+  margin: 0px 400px;
+  background-color: white;
+}
+
+.out {
+  text-align: right;
+  margin: 0px 15px;
+}
+
+.over {
+  background: linear-gradient(45deg, #ce1e53, #8f00c7);
+  height: 100vh;
+}
