@@ -1,6 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import AddPost from './component/add/post/add-post.component';
 import RegistrationEnded from './component/register-student/over/registration-ended.component';
 import RegisterStudent from './component/register-student/register/register.component';
 import HomePage from './pages/home_page/home-page.pages';
