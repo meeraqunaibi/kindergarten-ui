@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
+import Feed from "./pages/feed/feed.page";
 import Forgot from "./pages/forgot/forgot.page";
 import Login from "./pages/login/login.page";
 import Reset from "./pages/reset/reset.page";
@@ -12,10 +13,11 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Login />} />
-          <Route path="signup" element={<Signup />} />
+          {/* <Route path="signup" element={<Signup />} /> */}
           <Route path="forgot" element={<Forgot />} />
           <Route path="verify" element={<Verification />} />
           <Route path="reset" element={<Reset />} />
+          <Route path="feed" element={<Feed />} />
         </Routes>
       </BrowserRouter>
     </div>
