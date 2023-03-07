@@ -1,5 +1,6 @@
 import React from "react";
 import reset from "../../assets/images/reset.svg";
+import Button542 from "../../component/button542/button542";
 import "../forgot/forgot.css";
 import "./reset.css";
 
@@ -18,7 +19,7 @@ const Reset = () => {
           <label>كلمة المرور </label>
           <input type="password" placeholder="أدخل كلمة المرور" />
         </form>
-        <button>تأكيد</button>
+        <Button542 content="تأكيد" />
         <div>
           <span>هل تود إلغاء العملية؟</span> <b>إلغاء</b>
         </div>

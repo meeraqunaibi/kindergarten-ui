@@ -1,48 +1,8 @@
-
 .body{
     background-color: #F5F5F5;    
     padding: 0px 150px;
     min-height: 100vh;
 }
-
-.navbar{
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    align-items: center;
-    padding: 26px 0px;
-    background-color: #F5F5F5;    
-}
-.nav-button{
-    display: flex;
-    flex-direction: row;
-    direction: rtl;
-    justify-content: center;
-    align-items: center;
-    padding: 0px 49px 0px 0px;
-    width: 858px;
-    height: 46px;
-}
-
-.nav-button > *{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 20px;
-    text-decoration: none;
-}
-.nav-button > *:hover{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 20px;
-    text-decoration: none;
-    color: #0A1045;
-    font-weight: 700;
-}
-
 .feed-wrapper{
     display: flex;
     justify-content: space-between;
@@ -76,10 +36,10 @@
     padding: 10px;
     background-color: inherit;
 }
-.card{
+.cardt{
     position: relative;
 }
-.card input[id="cb1"] + label {
+.cardt input[id="cb1"] + label {
     display: inline-block;
     width: 50px;
     height: 50px;
@@ -88,7 +48,7 @@
     cursor: pointer;
 }
 
-.card input[id="cb1"]:checked + label:after {
+.cardt input[id="cb1"]:checked + label:after {
     position: relative;
     top: -10px;
     content: '\2714';
@@ -96,7 +56,7 @@
     color: #f1742a;
 }
 
-.card input[id="cb1"] {
+.cardt input[id="cb1"] {
     display: none;
 }
 

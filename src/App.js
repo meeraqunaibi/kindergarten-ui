@@ -9,7 +9,8 @@ import Verification from "./pages/verification/verification.page";
 import RegistrationEnded from './component/register-student/over/registration-ended.component';
 import RegisterStudent from './component/register-student/register/register.component';
 import HomePage from './pages/home_page/home-page.pages';
-import StudenPage from './pages/student/student.page';
+import Students from "./pages/students/students.page";
+import Profile from "./pages/profile/profile.page";
 function App() {
   return (
     <div className="App">
@@ -22,10 +23,11 @@ function App() {
           <Route path="reset" element={<Reset />} />
           <Route path="feed" element={<Feed />} />
           <Route path="/" element={<HomePage />} />
+          <Route path="students" element={<Students />} />
           <Route path="home" element={<HomePage />} />
+          <Route path='/profile' element={<Profile />} />
           <Route path='/register-student' element={<RegisterStudent />} />
           <Route path='/registration-ended' element={<RegistrationEnded />} />
-          <Route path='/student-page' element={<StudenPage />} />
         </Routes>
       </BrowserRouter>
     </div>
