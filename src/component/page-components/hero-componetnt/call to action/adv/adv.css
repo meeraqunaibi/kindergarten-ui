@@ -1,0 +1,39 @@
+.adv{
+  margin: 80px 120px;
+  background: linear-gradient(90deg, #6335F8 0%, #E71DE7 100%);
+  display: flex;
+  justify-content: space-between;
+  border-radius: 15px;
+}
+.call-action{
+  padding-top: 100px;
+  padding-left: 7vw;
+}
+.call-active-title{
+font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 48px;
+  letter-spacing: 0.2px;
+  text-transform: capitalize;
+  color: #FFFFFF;
+  margin-bottom: 10px;
+}
+.call-active-subtext{
+font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+  color: #FAFAFA;
+  margin-top: 50px;
+}
+.call-active-text{
+  padding: 80px 10px;
+}
+.read{
+  margin-top: 40px;
+  margin-left: 300px;
+}

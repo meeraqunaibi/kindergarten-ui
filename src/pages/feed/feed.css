@@ -1,9 +1,8 @@
-*{
-    background-color: #F5F5F5;    
-}
 
 .body{
+    background-color: #F5F5F5;    
     padding: 0px 150px;
+    min-height: 100vh;
 }
 
 .navbar{
@@ -25,7 +24,26 @@
     height: 46px;
 }
 
-.wrapper{
+.nav-button > *{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+.nav-button > *:hover{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #0A1045;
+    font-weight: 700;
+}
+
+.feed-wrapper{
     display: flex;
     justify-content: space-between;
     direction: rtl;
@@ -37,6 +55,7 @@
 .post-title{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     direction: rtl;
 }
 
@@ -46,7 +65,7 @@
     min-width: 30%;
     flex-direction: column;
     background-color: white;
-    padding: 15px;
+    padding: 0px 25px;
 }
 
 .tasks > *{
@@ -109,7 +128,7 @@
 
 .expand-task{
     position: absolute;
-    left: -288px;
+    left: -247px;
     top: 48px;
     font-family: 'Lexend';
     font-style: normal;
@@ -124,8 +143,8 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin: 50px 0px;
-    border-radius: 5px;
+    margin: 10px 0px;
+    border-radius: 10px;
     padding: 20px;
 }
 .post > *{
@@ -151,3 +170,4 @@
     font-size: 16px;
     color: #454D5D;
 }
+

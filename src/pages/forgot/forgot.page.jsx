@@ -1,5 +1,6 @@
 import React from "react";
 import forgot from "../../assets/images/forgotPic.svg";
+import Button542 from "../../component/button542/button542";
 import "./forgot.css";
 
 const Forgot = () => {
@@ -18,7 +19,7 @@ const Forgot = () => {
           <label>الايميل</label>
           <input type="email" placeholder="أدخل الإيميل" />
         </form>
-        <button>تأكيد</button>
+        <Button542 content="تأكيد" />
         <div>
           <span>هل تذكرت كلمة المرور؟</span> <b>تسجيل الدخول</b>
         </div>

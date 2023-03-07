@@ -1,0 +1,42 @@
+.button {
+  text-decoration: none;
+  font-family: 'Tajawal';
+  font-style: normal;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  letter-spacing: 0.46px;
+  color: #0A1045;
+  border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.fill {
+  background: #F9E900;
+  padding: 15px 40px;
+}
+
+.empty {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  justify-content: center;
+  padding: 15px 40px;
+}
+
+.fill:hover ,.headerb:hover {
+  background: white;
+  cursor: pointer;
+}
+
+.empty:hover {
+  background: #F9E900;
+  color: #0A1045;
+}
+
+.headerb {
+  padding: 8px 15px;
+  background: #F9E900;
+  transition: all 0.3s ease;
+    font-size: 16px;
+}

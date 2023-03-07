@@ -1,5 +1,6 @@
 import React from "react";
 import forgot from "../../assets/images/forgotPic.svg";
+import Button542 from "../../component/button542/button542";
 import "../forgot/forgot.css";
 
 const Verification = () => {
@@ -18,7 +19,7 @@ const Verification = () => {
           <label>الرمز</label>
           <input type="text" placeholder="أدخل الرمز" />
         </form>
-        <button>تأكيد</button>
+        <Button542 content="تأكيد" />
         <div>
           <span>هل أدخلت بريداً خاطئاً؟</span> <b>عودة</b>
         </div>

@@ -1,0 +1,62 @@
+.hero-text {
+  font-family: 'Tajawal';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 68px;
+  letter-spacing: 1.2px;
+  text-transform: capitalize;
+  color: #FFFFFF;
+  margin-bottom: 16px;
+}
+
+.welcome {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  column-gap: 30px;
+}
+
+.hero-subtext {
+  font-family: 'Tajawal';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+  color: #FFFFFF;
+  margin-bottom: 15px;
+}
+
+.bus {
+  position: absolute;
+  bottom: 0;
+  right: 70px;
+}
+
+.bus img {
+  max-width: 45vw;
+}
+
+.start:hover {
+  background: white;
+  cursor: pointer;
+}
+
+.connect-us:hover {
+  background: #F9E900;
+  color: #0A1045;
+}
+
+.definition {
+  padding-top: 100px;
+  padding-left: 7vw;
+}
+
+.buttons-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 15px;
+  padding: 10px;
+}
