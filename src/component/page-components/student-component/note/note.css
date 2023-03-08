@@ -1,29 +1,30 @@
 .write-note {
   width: 500px;
-  height: 120px;
-  background: #FFFFFF;
-  border: 1px solid #F4F7FF;
-  box-shadow: 0px 5px 10px rgba(221, 221, 221, 0.25);
-  border-radius: 12px;
-  padding: 10px 10px;
-  text-align: right;
+    height: 120px;
+    background: #FFFFFF;
+    border: 1px solid #F4F7FF;
+    box-shadow: 0px 5px 10px rgb(221 221 221 / 25%);
+    padding: 16px 27px;
+    text-align: right;
+    margin-right: -33px;
 }
 
 .notes {
-  font-family: 'Playfair Display';
+font-family: 'Playfair Display';
   font-style: normal;
   font-weight: 700;
-  font-size: 40px;
+  font-size: 35px;
   line-height: 53px;
   text-align: right;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   color: #0A1045;
+  margin-right: -33px;
 }
 .teacher-note{
   font-family: 'Open Sans';
     font-style: normal;
     font-weight: 400;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 33px;  
     text-align: right;
     color: #454D5D;

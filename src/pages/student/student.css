@@ -1,9 +1,8 @@
 .student {
-  background: linear-gradient(90deg, #6335F8 0%, #E71DE7 100%);
+  background: #F5F5F5;
   direction: rtl;
 }
 
 .note {
   display: flex;
-  justify-content: flex-start;
 }

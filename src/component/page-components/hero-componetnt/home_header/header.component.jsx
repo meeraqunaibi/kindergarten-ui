@@ -2,9 +2,10 @@ import { Link } from "react-router-dom";
 import './header.css';
 import logo from '../../../../images/logo.svg';
 import Button from "../button/button.component";
+import { HashLink } from "react-router-hash-link";
 
 
-const HomeHeader = () => {
+const HomeHeader = (props) => {
   const x = new Date('2023-02-19');
   const y = new Date('2023-05-17');
   const getRegisterLink = () => {
@@ -14,7 +15,7 @@ const HomeHeader = () => {
       return '/registration-ended';
     }
   }
-
+console.log(props.id);
   return (
     <header className="header">
       <nav>
@@ -23,10 +24,10 @@ const HomeHeader = () => {
         </div>
         <div className="content">
           <Link to={'/'}>الرئيسية</Link>
-          <Link> من نحن</Link>
-          <Link> ماذا نقدم</Link>
-          <Link> الاعلانات</Link>
-          <Link> نواصل معنا</Link>
+          <HashLink to={`/home-page/#content`}>من نحن</HashLink>
+          <HashLink to={`/home-page/#feature`}> ماذا نقدم</HashLink>
+          <HashLink to={`/home-page/#call-action`}> الاعلانات</HashLink>
+          <HashLink to={`/home-page/#footer`}> نواصل معنا</HashLink>
         </div>
         <div className="register">
           <Button title='تسجيل الدخول' className='button headerb' />

@@ -25,7 +25,7 @@ const AddPost = props => {
               <div className="select-margin">
                 <label>نوع المنشور*</label>
                 <Select
-                  className="select"
+                  className="select margin"
                   options={TYPE}
                   placeholder="اعلان"
                 />
@@ -35,7 +35,7 @@ const AddPost = props => {
             
             <div className="post">
               <label>المنشور*</label>
-              <textarea cols="70" rows="6" placeholder="اكتب شيء ما هنا....."></textarea>
+              <textarea cols="60" rows="6" placeholder="اكتب شيء ما هنا....." className="textarea"/>
             </div>
             <div>              
               <button className="add-post-btn" onClick={(e) => props.close(e)}>الغاء</button>

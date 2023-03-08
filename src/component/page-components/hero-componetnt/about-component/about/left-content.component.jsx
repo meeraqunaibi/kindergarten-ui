@@ -3,8 +3,8 @@ import Content from '../content/conten.component';
 import './left-content.css';
 const LeftContent = () => {
   return (
-    <div className='left-contant'>
-      <div className='contents'>
+    <div className='left-contant' id='content'>
+      <div className='contents' >
         <Content
           title='الوصف'
           description='روضة الذكاء العقلي ..الروضة المتخصصة في تدريس مناهج مميزة وفعاله'

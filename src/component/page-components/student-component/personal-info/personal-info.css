@@ -4,11 +4,6 @@
   margin: 0 5px;
 }
 
-.edit-btn {
-  border: none;
-  background-color: white;
-}
-
 .person {
   display: flex;
   justify-content: space-between;

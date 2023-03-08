@@ -1,13 +1,10 @@
 .adv{
-  margin: 80px 120px;
   background: linear-gradient(90deg, #6335F8 0%, #E71DE7 100%);
   display: flex;
-  justify-content: space-between;
   border-radius: 15px;
 }
 .call-action{
-  padding-top: 100px;
-  padding-left: 7vw;
+  padding: 65px 30px;
 }
 .call-active-title{
 font-family: 'Poppins';
