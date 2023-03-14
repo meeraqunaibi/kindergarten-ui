@@ -1,8 +1,8 @@
 import StudentHeader from "../../component/page-components/student-component/header/stu-header.component";
 import StudentInformation from "../../component/page-components/student-component/info/student-info.component";
 import Note from "../../component/page-components/student-component/note/note.component";
-import './student.css';
-const StudenPage = () => {
+import './profile.css';
+const Profile = () => {
   return (
     <div className="student">
       <StudentHeader />
@@ -13,4 +13,4 @@ const StudenPage = () => {
     </div>
   )
 }
-export default StudenPage;
+export default Profile;

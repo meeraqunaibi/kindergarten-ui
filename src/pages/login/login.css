@@ -1,0 +1,73 @@
+.container{
+    display: flex;
+    background-color: #F3F6F5;
+    justify-content: space-between;
+    font-family: 'Playfair Display';
+}
+.graphics{
+    min-width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(335.36deg, #E71DE7 -18.29%, #6335F8 130.68%);
+}
+
+.graphics p{
+    width: 364px;
+    font-weight: 700;
+    font-size: 35px;
+    text-align: center;
+    letter-spacing: -0.03em;
+    color: #0A1045;
+}
+
+.login-logo{
+    margin-top: 34px;
+}
+
+.login-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: right;
+    min-width: 50%;
+    background-color: white;
+}
+.login-info p{
+    font-weight: 700;
+    font-size: 48px;
+    color: #0A1045;
+}
+
+.login-info form{
+    display: flex;
+    flex-direction: column;}
+
+.login-info form>label{
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 27px;    
+    color: #0A1045;
+    margin-bottom: 10px;
+}
+.login-info form>input{
+    width: 350px;
+    height: 45px;
+    box-sizing: border-box;
+    border: 1px solid #0A1045;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    text-align:right;
+    padding: 15px;
+}
+
+.login-info span{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;    
+    text-align: right;
+    color: #0A1045;
+    margin-top: 5px;
+}

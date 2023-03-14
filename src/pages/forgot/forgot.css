@@ -1,0 +1,25 @@
+.forgot-graphics{
+    min-width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background: linear-gradient(335.36deg, #E71DE7 -18.29%, #6335F8 130.68%);
+    color: white;
+}
+
+.forgot-graphics img{
+    margin-top: 56px;
+    margin-bottom: 40px;
+}
+
+.ver-msg{
+    margin-top: 5px;
+    margin-bottom: 160px;
+}
+
+.ver-msg span{
+    font-weight: 700;
+    font-size: 28px;
+}
+
