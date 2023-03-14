@@ -7,7 +7,7 @@ import "./navbar.css"
 const Navbar = () => {
   return (
     <div className="navbar">
-      <Button title="تسجيل الخروج" className="button headerb" />
+      <Button title="تسجيل الخروج" className="button headerb" link='/login' />
       <div className="nav-button">
         <Link>الرئيسية</Link>
         <Link>ألعاب</Link>

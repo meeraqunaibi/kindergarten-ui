@@ -29,6 +29,7 @@ font-family: 'Poppins';
 }
 .call-active-text{
   padding: 80px 10px;
+  text-align: center;
 }
 .read{
   margin-top: 40px;

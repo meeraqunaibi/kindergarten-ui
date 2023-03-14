@@ -3,7 +3,7 @@ import Content from '../content/conten.component';
 import './left-content.css';
 const LeftContent = () => {
   return (
-    <div className='left-contant' id='content'>
+    <div className='left-contant' id='contents'>
       <div className='contents' >
         <Content
           title='الوصف'

@@ -16,16 +16,16 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Login />} />
+          <Route path="/login" element={<Login />} />
           {/* <Route path="signup" element={<Signup />} /> */}
-          <Route path="forgot" element={<Forgot />} />
-          <Route path="verify" element={<Verification />} />
-          <Route path="reset" element={<Reset />} />
-          <Route path="feed" element={<Feed />} />
+          <Route path="/forgot" element={<Forgot />} />
+          <Route path="/verify" element={<Verification />} />
+          <Route path="/reset" element={<Reset />} />
+          <Route path="/feed" element={<Feed />} />
           <Route path="/" element={<HomePage />} />
-          <Route path="students" element={<Students />} />
-          <Route path="home" element={<HomePage />} />
-          <Route path='/profile' element={<Profile />} />
+          <Route path="/students" element={<Students />} />
+          <Route path="/home-ppage" element={<HomePage />} />
+          <Route path='/student-page' element={<Profile />} />
           <Route path='/register-student' element={<RegisterStudent />} />
           <Route path='/registration-ended' element={<RegistrationEnded />} />
         </Routes>
