@@ -8,7 +8,7 @@ import Signup from "./pages/signup/signup.page";
 import Verification from "./pages/verification/verification.page";
 import RegistrationEnded from './component/register-student/over/registration-ended.component';
 import RegisterStudent from './component/register-student/register/register.component';
-import HomePage from './pages/home_page/home-page.pages';
+import HomePage from './pages/home/home.page';
 import Students from "./pages/students/students.page";
 import Profile from "./pages/profile/profile.page";
 function App() {
@@ -26,8 +26,8 @@ function App() {
           <Route path="students" element={<Students />} />
           <Route path="home" element={<HomePage />} />
           <Route path='/profile' element={<Profile />} />
-          <Route path='/register-student' element={<RegisterStudent />} />
-          <Route path='/registration-ended' element={<RegistrationEnded />} />
+          {/* <Route path='/register-student' element={<RegisterStudent />} /> */}
+          {/* <Route path='/registration-ended' element={<RegistrationEnded />} /> */}
         </Routes>
       </BrowserRouter>
     </div>
