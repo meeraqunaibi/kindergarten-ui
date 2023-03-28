@@ -4,14 +4,27 @@ import { CLASS, TYPE } from "../../../data/class-name";
 import Input from "../../input/input.component";
 import './add-post.css';
 
+
 const AddPost = props => {
+  const handelPostSubmit = (e) => {
+    e.preventDefault();
+    props.onAddpost();
+    props.close();
+  }
+
   return (
     <div className="popup ">
       <div className="box">
         <div className="addpost">
           <h3>اضافة منشور</h3>
-          <form >
-            <Input label="العنوان *" placeholder="ما هو عنوان المنشور " className="title" />
+          <form onSubmit={(e) => handelPostSubmit(e)}>
+            <Input
+              label="العنوان *"
+              placeholder="ما هو عنوان المنشور "
+              className="title"
+              value={props.post.title}
+              onChange={(e) => props.handleInputChange(e.target.value, 'title')}
+            />
             <div className="select-post">
               <div className="select-margin">
                 <label>الفئة المستهدفة*</label>
@@ -19,6 +32,7 @@ const AddPost = props => {
                   className="select"
                   options={CLASS}
                   placeholder="الجميع"
+                  onChange={(item) => props.handleInputChange(item.value, 'class')}
                 />
               </div>
 
@@ -28,18 +42,25 @@ const AddPost = props => {
                   className="select margin"
                   options={TYPE}
                   placeholder="اعلان"
+                  onChange={(item) => props.handleInputChange(item.value, 'type')}
                 />
               </div>
 
             </div>
-            
+
             <div className="post">
               <label>المنشور*</label>
-              <textarea cols="60" rows="6" placeholder="اكتب شيء ما هنا....." className="textarea"/>
+              <textarea
+                cols="60"
+                rows="6"
+                placeholder="اكتب شيء ما هنا....."
+                className="textarea"
+                onChange={(e) => props.handleInputChange(e.target.value, 'content')}
+              />
             </div>
-            <div>              
+            <div>
               <button className="add-post-btn" onClick={(e) => props.close(e)}>الغاء</button>
-              <button className="add-post-btn">نشر</button>
+              <button className="add-post-btn" >نشر</button>
             </div>
           </form>
         </div>

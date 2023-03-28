@@ -10,6 +10,7 @@
   min-height: 100vh;
   background: rgb(219 215 215 / 61%);
   direction: inherit;
+  z-index: 2;
 }
 
 .margin {
