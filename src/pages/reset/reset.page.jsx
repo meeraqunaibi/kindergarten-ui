@@ -12,7 +12,7 @@ const Reset = (props) => {
     e.preventDefault();
     
     const newpass = e.target.newpass.value.trim();
-    //reset need backend
+    //reset need backend and data base
     if(newpass){
       alert({newpass})
       navigate('/login');
