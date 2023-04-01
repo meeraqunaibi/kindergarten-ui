@@ -29,6 +29,12 @@ const Login = () => {
       }
     }
   };
+   
+  const handelForgot= (e)=>{
+    e.preventDefault();
+    navigate('/forgot');
+  }
+
   return (
     <div className="container">
       <div className="graphics">
@@ -50,6 +56,9 @@ const Login = () => {
           <label>كلمة المرور</label>
           <input type="password" placeholder="كلمة المرور " name="password" />
           <Button542 content="تسجيل الدخول" type="submit" />
+        <sapn onClick={handelForgot}>
+          نسيت كلمة المرور
+        </sapn>
         </form>
       </div>
     </div>
