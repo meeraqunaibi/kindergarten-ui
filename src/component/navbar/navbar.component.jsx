@@ -10,7 +10,7 @@ const Navbar = () => {
       <Button title="تسجيل الخروج" className="button headerb" link='/login' />
       <div className="nav-button">
         <Link to="/feed" >الرئيسية</Link>
-        <Link>ألعاب</Link>
+        <Link to="/game">ألعاب</Link>
         <Link to="/students">الزملاء</Link>
         <Link to="/student-page">حسابي</Link>
       </div>

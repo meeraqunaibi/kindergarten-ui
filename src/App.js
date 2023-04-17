@@ -11,6 +11,7 @@ import RegisterStudent from './component/register-student/register/register.comp
 import HomePage from './pages/home_page/home-page.pages';
 import Students from "./pages/students/students.page";
 import Profile from "./pages/profile/profile.page";
+import MemoryGame from "./pages/memory-game/memory-game.page";
 function App() {
   return (
     <div className="App">
@@ -24,6 +25,7 @@ function App() {
           <Route path="/feed" element={<Feed />} />
           <Route path="/" element={<HomePage />} />
           <Route path="/students" element={<Students />} />
+          <Route path="/game" element={<MemoryGame />} />
           <Route path="/home-ppage" element={<HomePage />} />
           <Route path='/student-page' element={<Profile />} />
           <Route path='/register-student' element={<RegisterStudent />} />
