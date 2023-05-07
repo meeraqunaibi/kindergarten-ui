@@ -1,10 +1,10 @@
-import { Link } from "react-router-dom";
 import './header.css';
 import logo from '../../../../images/logo.svg';
 import Button from "../button/button.component";
+import { HashLink } from "react-router-hash-link";
 
 
-const HomeHeader = () => {
+const HomeHeader = (props) => {
   const x = new Date('2023-02-19');
   const y = new Date('2023-05-17');
   const getRegisterLink = () => {
@@ -14,22 +14,24 @@ const HomeHeader = () => {
       return '/registration-ended';
     }
   }
-
+console.log(props.id);
   return (
-    <header className="header">
+    <header className="header ">
       <nav>
         <div>
           <img src={logo} alt="روضة الذكاء العقلي" />
         </div>
         <div className="content">
-          <Link to={'/'}>الرئيسية</Link>
-          <Link> من نحن</Link>
-          <Link> ماذا نقدم</Link>
-          <Link> الاعلانات</Link>
-          <Link> نواصل معنا</Link>
+          <HashLink to={'/#home-page'}>الرئيسية</HashLink>
+          <HashLink to={'/#contents'}>من نحن</HashLink>
+          <HashLink to={`/#feature`}> ماذا نقدم</HashLink> 
+          <HashLink to={`/#evaluation`}> اراء الأهالي</HashLink>
+          <HashLink to={`/#call-action`}> الاعلانات</HashLink>
+          <HashLink to={`/#footer`}> نواصل معنا</HashLink>
+
         </div>
         <div className="register">
-          <Button title='تسجيل الدخول' className='button headerb' />
+          <Button title='تسجيل الدخول' className='button headerb' link="/login" />
           <Button title='تسجيل الطالب' className='button headerb' link={getRegisterLink()} />
         </div>
       </nav >

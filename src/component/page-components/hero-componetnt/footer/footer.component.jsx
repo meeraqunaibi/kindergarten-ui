@@ -6,7 +6,7 @@ import map from '../../../../images/map.svg';
 import './footer.css';
 const Footer = () => {
   return (
-    <div>
+    <div id='footer'>
       <div className="footer">
         <div>
           <div className='footer-content'>

@@ -9,7 +9,7 @@ const Hero = () => {
         <div className='hero-subtext'>الروضة المتخصصة في تدريس مناهج مميزة وفعاله </div>
         <div className='hero-subtext'>توصال معنا او سجل الدخول بحساب طفلك للاطلاع على مزيد من التفاصيل </div>
         <div className='buttons-group'>
-          <Button title='تسجيل الدخول' className='button fill' />
+          <Button title='تسجيل الدخول' className='button fill' link='/login' />
           <Button title='تواصل معنا' className='button empty' />
         </div>
       </div>

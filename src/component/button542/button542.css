@@ -1,4 +1,4 @@
-.button542{
+.button542 {
     width: 150px;
     height: 45px;
     background: #0A1045;
@@ -9,4 +9,8 @@
     font-size: 20px;
     color: #FFFFFF;
     cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    padding: 11px 5px;
+    align-self: center;
 }

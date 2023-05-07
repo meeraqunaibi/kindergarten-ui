@@ -9,7 +9,9 @@
   text-transform: capitalize;
   color: #212121;
 }
-
+.feature{
+  padding: 80px 30px;
+}
 .feature-title {
   display: flex;
   align-items: center;

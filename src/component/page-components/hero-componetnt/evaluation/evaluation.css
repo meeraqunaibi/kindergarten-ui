@@ -1,5 +1,7 @@
 .eva {
   position: relative;
+  padding:80px 30px;
+  text-align: -webkit-center;
 }
 
 .rate {
@@ -12,6 +14,7 @@
   letter-spacing: 0.2px;
   text-transform: capitalize;
   color: #212121;
+  padding: 35px 0;
 }
 
 .opinion {
@@ -24,25 +27,31 @@
   letter-spacing: 0.2px;
   text-transform: capitalize;
   color: #424242;
+  max-width: 500px;
+  min-height: 150px;
+  border: 1px solid;
 }
 
 .pre {
   position: absolute;
-  left: 440px;
-  top: 105px;
+  left: 380px;
+  top: 295px;
 }
 
 .next {
   position: absolute;
-  right: 440px;
-  top: 103px;
+  right: 380px;
+  top: 295px;
 }
-.rates{
+
+.rates {
   border: none;
-    width: 40px;
-    height: 40px;
-    background: white;
+  width: 40px;
+  height: 40px;
+  background: white;
+
 }
-.rates:hover{
+
+.rates:hover {
   cursor: pointer;
 }

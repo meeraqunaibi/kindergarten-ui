@@ -3,7 +3,7 @@ import Button from '../../button/button.component';
 import './adv.css';
 const CallToAction = () => {
   return (
-    <div className='call-action'>
+    <div className='call-action' id='call-action'>
       <div className='adv'>
         <div className='call-active-text'>
           <span className='call-active-title'>نحن  بحاجة لموظفين</span><br/>

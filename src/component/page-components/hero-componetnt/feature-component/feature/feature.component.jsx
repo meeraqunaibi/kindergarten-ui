@@ -5,7 +5,7 @@ import modern from '../../../../../images/modern.svg';
 import FeatureName from '../feature-name/feature-name.component';
 const Feature = () => {
   return (
-    <div className='feature'>
+    <div className='feature' id='feature'>
       <div className="into">
         <p>تهتم روضة الذكاء العقلي حول العديد من الجوانب لنمو طفلك <br />: مثل</p>
       </div>

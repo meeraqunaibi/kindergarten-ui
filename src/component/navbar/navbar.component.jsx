@@ -7,12 +7,12 @@ import "./navbar.css"
 const Navbar = () => {
   return (
     <div className="navbar">
-      <Button title="تسجيل الخروج" className="button headerb" />
+      <Button title="تسجيل الخروج" className="button headerb" link='/login' />
       <div className="nav-button">
-        <Link>الرئيسية</Link>
-        <Link>ألعاب</Link>
-        <Link>الزملاء</Link>
-        <Link>حسابي</Link>
+        <Link to="/feed" >الرئيسية</Link>
+        <Link to="/game">ألعاب</Link>
+        <Link to="/students">الزملاء</Link>
+        <Link to="/student-page">حسابي</Link>
       </div>
       <div className="nav-icon">
         <img src={navImg} alt="icon" />

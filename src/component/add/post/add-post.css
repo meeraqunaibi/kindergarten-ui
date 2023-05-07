@@ -1,7 +1,7 @@
-
-.select{
-  margin: 15px 10px;
+.select {
+  margin: 5px 0px;
 }
+
 .popup {
   position: absolute;
   left: 0;
@@ -10,8 +10,12 @@
   min-height: 100vh;
   background: rgb(219 215 215 / 61%);
   direction: inherit;
+  z-index: 2;
 }
 
+.margin {
+  margin-right: 27px;
+}
 
 .box {
   position: relative;
@@ -32,57 +36,70 @@
 }
 
 .add-post-btn {
-  padding: 5px 90px;
+  padding: 5px 85px;
   margin: 10px 10px;
   cursor: pointer;
   font-family: 'Inter';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 24px;
-    color: #344054;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: #344054;
+  margin: 16px 30px;
 }
-.add-post-btn:hover{
-  background-color:#0A1045 ;
+
+.add-post-btn:hover {
+  background-color: #0A1045;
   color: white;
+  border-radius: 5px;
+
 }
-.select-post{
+
+.select-post {
   display: flex;
   text-align: justify;
-  justify-content: flex-start;
 }
-.select{
+
+.select {
   width: 250px;
 }
-.addpost>h3{
+
+.addpost>h3 {
   font-family: 'Playfair Display';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 53px;
-    color: #0A1045;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 53px;
+  color: #0A1045;
+  text-align: justify;
 }
-.title{
+
+.title {
   font-family: 'Inter';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 20px;
-   color: #344054;
-   margin-bottom: 10px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #344054;
+  margin-bottom: 10px;
 }
-.post{
+
+.post {
   display: grid;
 }
-.post>label{
+
+.post>label {
   text-align: justify;
   font-family: 'Inter';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 20px;
-    color: #344054;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #344054;
 }
-.select-margin>label{
-  margin: 0px 15px;
+
+.textarea {
+  border-radius: 5px;
+  width: 530px;
+  padding: 12px 14px;
 }
