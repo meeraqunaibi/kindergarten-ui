@@ -5,7 +5,7 @@ import Feature from '../../component/page-components/hero-componetnt/feature-com
 import Footer from '../../component/page-components/hero-componetnt/footer/footer.component';
 import Hero from '../../component/page-components/hero-componetnt/hero/hero.component';
 import HomeHeader from '../../component/page-components/hero-componetnt/home_header/header.component';
-import './home-page.css';
+import './home.css';
 const HomePage = () => {
   return (
     <div >
