@@ -1,68 +1,72 @@
+import { useState } from 'react';
 import './register.css';
+import StudentInfo from "../../form/student-form/student-form.component.jsx";
+import ParentInfo from "../../form/parent-form/parent-form.component.jsx";
+import HomeHeader from '../../page-components/hero-componetnt/home_header/header.component';
 
-const RegisterStudent = ()=>{
-  return(
-<div className='background'>
-<div class="wrapper rounded bg-white ">
+const RegisterStudent = () => {
+  const [page, setPage] = useState(0);
+  const [formData, setFormData] = useState({
+    studentName:"",
+    studentID:"",
+    DOB:"",
+    studentImg:"",
+    gender:"",
+    live: "",
+    blood: "",
+    watch: "",
+    strength: "",
+    Weaknesses: "",
+    motherName:"",
+    fatherName:"",
+    motherPhone:"",
+    fatherPhone:"",
+    mobile_num:"",
+    motherEdu:"",
+    fatherEdu:"",
+    facebookLink:""
 
-      <div class="h3">Registration Form</div>
-
-      <div class="form">
-        <div class="row">
-          <div class="col-md-6 mt-md-0 mt-3">
-            <label>First Name</label>
-            <input type="text" class="form-control" required/>
-          </div>
-          <div class="col-md-6 mt-md-0 mt-3">
-            <label>Last Name</label>
-            <input type="text" class="form-control" required/>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 mt-md-0 mt-3">
-            <label>Birthday</label>
-            <input type="date" class="form-control" required/>
-          </div>
-          <div class="col-md-6 mt-md-0 mt-3">
-            <label>Gender</label>
-            <div class="d-flex align-items-center mt-2">
-              <label class="option">
-                <input type="radio" name="radio"/>Male
-                  <span class="checkmark"></span>
-              </label>
-              <label class="option ms-4">
-                <input type="radio" name="radio"/>Female
-                  <span class="checkmark"></span>
-              </label>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 mt-md-0 mt-3">
-            <label>Email</label>
-            <input type="email" class="form-control" required/>
-          </div>
-          <div class="col-md-6 mt-md-0 mt-3">
-            <label>Phone Number</label>
-            <input type="tel" class="form-control" required/>
-          </div>
-        </div>
-        <div class=" my-md-2 my-3">
-          <label>Subject</label>
-          <select id="sub" required>
-            <option value="" selected hidden>Choose Option</option>
-            <option value="Maths">Maths</option>
-            <option value="Science">Science</option>
-            <option value="Social">Social</option>
-            <option value="Hindi">Hindi</option>
-          </select>
-        </div>
-        <div class="btn btn-primary mt-3">Submit</div>
+  });
+  const formTitle = ["معلومات عن الطالب", "معلومات عن الأهل"];
+  const PageDisplay = () => {
+    if (page === 0 ) {
+      return <StudentInfo formData={formData} setFormData={setFormData} />
+    }
+    else {
+      return <ParentInfo formData={formData} setFormData={setFormData} />
+    }
+  }
+  return (
+    <div className='form'>
+      {/* <dir className="progressbar"></dir> */}
+      {/* <div className="header">
+        <h1>{formTitle[page]}</h1>
+      </div> */}
+      <HomeHeader />
+      <dir className="body">{PageDisplay()}</dir>
+      <div>
+        <button
+       className='b'
+          onClick={() => {
+            setPage(currpage => currpage - 1)}}
+          disabled={page === 0}
+        >السابق</button>
+        <button
+          className='b'
+          onClick={() => {
+            if (page === formTitle.length - 1) {
+              alert("يرجى الذهاب للروضة من أجل تأكيد عملية التسجيل")
+              console.log(formData);
+            } else {
+              setPage(currpage => currpage + 1)
+            }
+          }
+          }>
+          {page === formTitle.length - 1 ? "ارسال" : "التالي"}
+        </button>
       </div>
-
     </div>
-</div>
-      
+
   )
 }
 export default RegisterStudent;

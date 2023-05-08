@@ -7,8 +7,16 @@ import './add-post.css';
 
 const AddPost = props => {
   const handelPostSubmit = (e) => {
+    console.log(props.post.type);
     e.preventDefault();
-    props.onAddpost();
+    if (props.post.type === 1) {
+      props.onAddpost();    
+      console.log(props.onAddpost);
+
+    } else if(props.post.type === 2) {
+      props.onAddtask();
+    }
+    //props.onAddpost();
     props.close();
   }
 
@@ -33,7 +41,9 @@ const AddPost = props => {
                   options={CLASS}
                   placeholder="الجميع"
                   onChange={(item) => props.handleInputChange(item.value, 'class')}
+                  value={props.post.type}
                 />
+
               </div>
 
               <div className="select-margin">

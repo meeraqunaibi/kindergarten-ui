@@ -16,18 +16,29 @@ const initialPost = {
 
 const Feed = () => {
   const [post, setPost] = useState(initialPost)
-
   const [isOpen, setIsOpen] = useState(false);
   const [posts, setPosts] = useState(JSON.parse(localStorage.getItem('PostList') || '[]'));
+  const [tasks, setTasks] = useState(JSON.parse(localStorage.getItem('TaskList') || '[]'));
 
+  console.log(tasks);
   const togglePost = () => {
     setIsOpen(true);
   }
 
   const addNewPost = () => {
     const newposts = [...posts, post];
+    console.log(newposts);
     setPosts(newposts);
     localStorage.setItem("PostList", JSON.stringify(newposts));
+    togglePost();
+    setPost(initialPost);
+
+  };
+  const addNewtask = () => {
+    const newtasks = [...tasks, post];
+    console.log(newtasks);
+    setTasks(newtasks);
+    localStorage.setItem("TaskList", JSON.stringify(newtasks));
     togglePost();
     setPost(initialPost);
 
@@ -38,9 +49,8 @@ const Feed = () => {
       [key]: value
     });
   };
-
   return (
-    <div className="body">
+    <div className="feed">
       <Navbar />
       <div className="feed-wrapper">
         <div className="posts">
@@ -51,24 +61,36 @@ const Feed = () => {
               isOpen && <AddPost
                 close={() => setIsOpen(false)}
                 onAddpost={addNewPost}
+                onAddtask={addNewtask}
                 handleInputChange={handleInputChange}
                 post={post}
+              // type={post.type}
               />
             }
+
           </div>
-          <div className="posts">
-            {posts.map(post => (
-              <PostCart
-                title={post.title}
-                content={post.content}
-              />
-            ))}
+          {
+            posts.length &&
+            <div className="posts">
+              {posts.map(post => (
+                <PostCart
+                  title={post.title}
+                  content={post.content}
+                />
+              ))}
+            </div>
+          }
+        </div>
+        {
+          tasks.length &&
+          <div className="tasks">
+            {
+              tasks.map(task => (
+                <TaskCard title={task.title} content={task.content} />
+              ))
+            }
           </div>
-        </div>
-        <div className="tasks">
-          <Text917 title="المهام" />
-          <TaskCard />
-        </div>
+        }
       </div>
     </div>
   );

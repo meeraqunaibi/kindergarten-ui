@@ -1,5 +1,5 @@
 import React from 'react';
-import './input.css';
+import './textarea.css';
 
 /**
  * Renders an input element.
@@ -7,7 +7,7 @@ import './input.css';
  *  label?: string;
  * }} props 
  */
-const Input = props => {
+const Textarea = props => {
   const { label, className, ...inputProps } = props;
 
   return (
@@ -21,9 +21,9 @@ const Input = props => {
           </label>
         ) : null
       }
-      <input {...inputProps} />
+      <textarea {...inputProps} />
     </div>
   );
 };
 
-export default Input;
+export default Textarea;
