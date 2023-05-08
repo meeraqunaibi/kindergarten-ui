@@ -8,7 +8,7 @@ import Signup from "./pages/signup/signup.page";
 import Verification from "./pages/verification/verification.page";
 import RegistrationEnded from './component/register-student/over/registration-ended.component';
 import RegisterStudent from './component/register-student/register/register.component';
-import HomePage from './pages/home_page/home-page.pages';
+import HomePage from './pages/home/home.page';
 import Students from "./pages/students/students.page";
 import Profile from "./pages/profile/profile.page";
 import MemoryGame from "./pages/memory-game/memory-game.page";
