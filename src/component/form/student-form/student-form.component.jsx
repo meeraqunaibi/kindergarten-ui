@@ -11,26 +11,26 @@ const StudentInfo = ({ formData, setFormData }) => {
       <div className="student-detail">
         <Input className="half-row" 
         label="الاسم الرباعي" 
-        value={formData.studentName} 
-        onChange={(event) => setFormData({...formData,studentName:event.target.value})} />
+        value={formData.fullName} 
+        onChange={(event) => setFormData({...formData,fullName:event.target.value})} />
         <Input className="half-row" label="رقم الهوية" 
-          value={formData.studentID}
-          onChange={(event) => setFormData({ ...formData, studentID: event.target.value })}
+          value={formData.copyOfIdCard}
+          onChange={(event) => setFormData({ ...formData, copyOfIdCard: event.target.value })}
         />
         <Input className="half-row" label="تاريخ الميلاد" type="date" 
           value={formData.DOB}
           onChange={(event) => setFormData({ ...formData, DOB: event.target.value })}
         />
         <Input className="half-row" label="صورة للطفل" type='file'
-          value={formData.studentImg}
-          onChange={(event) => setFormData({ ...formData, studentImg: event.target.value })}
+          value={formData.image}
+          onChange={(event) => setFormData({ ...formData, image: event.target.value })}
         />
         <Select
           name='live'
           label='مع من يعيش الطفل'
           required 
-          value={formData.live}
-          onChange={(event) => setFormData({ ...formData, live: event.target.value })}
+          value={formData.withWhomChildLive}
+          onChange={(event) => setFormData({ ...formData, withWhomChildLive: event.target.value })}
           >
           {
             LIVE.map(live=>{
@@ -55,8 +55,8 @@ const StudentInfo = ({ formData, setFormData }) => {
           name='blood'
           label='زمرة الدم'
           required 
-          value={formData.blood}
-          onChange={(event) => setFormData({ ...formData, blood: event.target.value })}
+          value={formData.bloodType}
+          onChange={(event) => setFormData({ ...formData, bloodType: event.target.value })}
           >
           {
             BLOOD.map(blood => {
@@ -68,8 +68,8 @@ const StudentInfo = ({ formData, setFormData }) => {
           name='watch'
           label= 'يشاهد التلفاز'
           required
-          value={formData.watch}
-          onChange={(event) => setFormData({ ...formData, watch: event.target.value })}
+          value={formData.likeWatchingTV}
+          onChange={(event) => setFormData({ ...formData, likeWatchingTV: event.target.value })}
           >
           {
             WATCH.map(watch => {
@@ -83,8 +83,8 @@ const StudentInfo = ({ formData, setFormData }) => {
           onChange={(event) => setFormData({ ...formData, strength: event.target.value })}
         />
         <Textarea className="full-row" rows={3} cols={35} label="نقاط الضعف" 
-          value={formData.Weaknesses}
-          onChange={(event) => setFormData({ ...formData, Weaknesses: event.target.value })}
+          value={formData.weakness}
+          onChange={(event) => setFormData({ ...formData, weakness: event.target.value })}
         />
       </div>
     </div>

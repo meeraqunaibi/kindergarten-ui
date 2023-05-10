@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./login.css";
 import loginLogo from "../../assets/images/loginLogo.svg";
 import graphics from "../../assets/images/loginPic.svg";
@@ -11,13 +11,11 @@ const Login = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
     const email = e.target.email.value.trim();
     const password = e.target.password.value.trim();
-
-    if (email && password) {
-      const user = loginUser(email, password);
+    const user = await loginUser(email, password);
       if (user && user.role === 'admin') {
         setUser(user);
         navigate('/students');
@@ -28,7 +26,11 @@ const Login = () => {
         alert("Email or Password are not correct! Please try again.");
       }
     }
-  };
+  useEffect(() => {
+    if (user?.id) {
+      navigate('/student');
+    }
+  }, []);
   return (
     <div className="container">
       <div className="graphics">

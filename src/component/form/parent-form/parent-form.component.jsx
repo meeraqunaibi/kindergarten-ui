@@ -1,4 +1,4 @@
-import {   TRAN, WATCH } from "../../../data/class-name";
+import { TRAN, WATCH } from "../../../data/class-name";
 import Input from "../../input/input.component";
 import Select from "../../select/select.component";
 
@@ -10,8 +10,8 @@ const ParentInfo = ({ formData, setFormData }) => {
           name='tran'
           label='المواصلات'
           required
-          value={formData.live}
-          onChange={(event) => setFormData({ ...formData, live: event.target.value })}
+          value={formData.transportation}
+          onChange={(event) => setFormData({ ...formData, transportation: event.target.value })}
         >
           {
             TRAN.map(trans => {
@@ -19,12 +19,30 @@ const ParentInfo = ({ formData, setFormData }) => {
             })
           }
         </Select>
+        <Input className="half-row"
+          label="عنوان البيت"
+          type="text"
+          value={formData.transportation[0]}
+          onChange={(event) => setFormData({ ...formData, address: event.target.value })}
+
+        />
+        {
+          formData.transportation !== "بدون مواصلات" &&
+          <Input className="half-row"
+            label="موعد المغادرة"
+            type="time"
+            value={formData.afterSchoolStudent}
+            onChange={(event) => setFormData({ ...formData, afterSchoolStudent: event.target.value })}
+
+          />
+        }
+
         <Select
           name='sleep'
           label=' ينام في النهار'
           required
-          value={formData.live}
-          onChange={(event) => setFormData({ ...formData, live: event.target.value })}
+          value={formData.sleepDuringTheDay}
+          onChange={(event) => setFormData({ ...formData, sleepDuringTheDay: event.target.value })}
         >
           {
             WATCH.map(live => {
@@ -32,22 +50,23 @@ const ParentInfo = ({ formData, setFormData }) => {
             })
           }          </Select>
 
-          <Select
-            name='acc'
-            label='تعرض لحادث'
-            required
-            value={formData.live}
-            onChange={(event) => setFormData({ ...formData, live: event.target.value })}
-          >
-            {
-              WATCH.map(live => {
-                return <option key={live} value={live}>{live}</option>;
-              })
-            }
+        <Select
+          name='acc'
+          label='تعرض لحادث'
+          required
+          value={formData.hadAccident}
+          onChange={(event) => setFormData({ ...formData, hadAccident: event.target.value })}
+        >
+          {
+            WATCH.map(live => {
+              return <option key={live} value={live}>{live}</option>;
+            })
+          }
         </Select>
         <Input className="half-row"
           label="وقت النوم"
           type="time"
+          value={formData.sleepTime}
         />
         <Input className="half-row"
           label="اسم الأب "
@@ -63,23 +82,23 @@ const ParentInfo = ({ formData, setFormData }) => {
           label="رقم هاتف الأم"
           max={10}
           min={0}
-          value={formData.motherPhone}
+          value={formData.telephoneNum}
           onChange={(event) => setFormData({ ...formData, motherPhone: event.target.value })}
         />
         <Input className="half-row"
           label="رقم هاتف الأب"
           max={10}
           min={0}
-          value={formData.fatherPhone}
-          onChange={(event) => setFormData({ ...formData, fatherPhone: event.target.value })}
+          value={formData.telephoneNum}
+          onChange={(event) => setFormData({ ...formData, motherPhone: event.target.value })}
         />
         <Input className="half-row"
           label="رقم هاتف الاخر"
           type="number"
           max={10}
           min={0}
-          value={formData.mobile_num}
-          onChange={(event) => setFormData({ ...formData, mobile_num: event.target.value })}
+          value={formData.mobileNum}
+          onChange={(event) => setFormData({ ...formData, mobileNum: event.target.value })}
         />
         <Input className="half-row"
           label="رابط صفحة الفيس بوك"
@@ -90,14 +109,14 @@ const ParentInfo = ({ formData, setFormData }) => {
         <Input className="half-row"
           label="مستوى التعليم للأم"
           type="text"
-          value={formData.motherEdu}
-          onChange={(event) => setFormData({ ...formData, motherEdu: event.target.value })}
+          value={formData.levelOfEdu}
+          onChange={(event) => setFormData({ ...formData, levelOfEdu: event.target.value })}
         />
         <Input className="half-row"
           label="مستوى التعليم للأب"
           type="text"
-          value={formData.fatherEdu}
-          onChange={(event) => setFormData({ ...formData, fatherEdu: event.target.value })}
+          value={formData.levelOfEdu}
+          onChange={(event) => setFormData({ ...formData, levelOfEdu: event.target.value })}
         />
       </div>
     </div>
