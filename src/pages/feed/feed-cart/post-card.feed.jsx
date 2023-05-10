@@ -2,7 +2,7 @@ import './feed-cart.css';
 
 const PostCart = (props) =>{
   return(
-    <div className="post">
+    <div className="post-inf">
       <h3>{props.title}</h3>
       <p>
         {props.content}

@@ -1,4 +1,4 @@
-.post {
+.post-inf {
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -12,9 +12,7 @@
   color: #454D5D;
 }
 
-.post>* {
-  background-color: inherit;
-}
+
 .post-title {
   display: flex;
   justify-content: space-between;

@@ -38,9 +38,36 @@ const getAllStudent = () => {
       alert(error.toString());
     });
 };
+const getAllPost = () => {
+  return fetch(`http://127.0.0.1:3001/posts`)
+    .then((response) => response.json())
+    .catch((error) => {
+      alert(error.toString());
+    });
+};
+const createPost = (post) => {
+  console.log(post);
+  return fetch(`http://127.0.0.1:3001/posts/add`,
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(post)
+
+    })
+    .then((response) => {
+      const result = response.json();
+      console.log(result);
+    }).catch((error) => {
+      alert(error.toString());
+    });
+};
 
 export {
   createStudent,
   getStudent,
-  getAllStudent
+  getAllStudent,
+  getAllPost,
+  createPost
 };

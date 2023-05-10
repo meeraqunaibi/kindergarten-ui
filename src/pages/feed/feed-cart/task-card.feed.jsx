@@ -11,7 +11,7 @@ const TaskCard = (props) => {
           <label for={props.title}></label>
           <span className="task-title">{props.title}</span>
           <span className="task-date">{props.content}</span>
-          <span className="expand-task">{props.content}</span>
+          <span className="expand-task">{props.date}</span>
         </div>
         //  ))    
 
