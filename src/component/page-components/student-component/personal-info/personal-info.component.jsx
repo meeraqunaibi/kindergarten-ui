@@ -1,6 +1,6 @@
 import Input from "../../../input/input.component"
 import './personal-info.css';
-const PersonalInfo = () => {
+const PersonalInfo = (props) => {
   return (
     <div className="personal-info">
       <div className="person">
@@ -8,9 +8,9 @@ const PersonalInfo = () => {
         <div className="edit">
         </div>
       </div>
-      <Input label="رقم الهاتف" value="+972 5595 855" />
-      <Input label=" الاسم " value="Khaleed Ahmad"  />
-      <Input label=" تاريخ الميلاد" value="15/05/2018"  />
+      <Input label="رقم الهاتف" value={props.fathermMobileNum} />
+      <Input label=" الاسم " value={props.fullName}  />
+      <Input label=" تاريخ الميلاد" value={props.DOB}  />
     </div>
   )
 }

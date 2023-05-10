@@ -5,7 +5,7 @@
  */
 const loginUser = (username, password) => {
   console.log(username);
-  return fetch(`http://localhost:3000/auth`,
+  return fetch(`http://localhost:3001/auth`,
     {
       method: 'POST',
       headers: {

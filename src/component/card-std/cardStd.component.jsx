@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import "./cardStd.css";
 import AddFeedback from "../add/feedback/feedback.component";
+import useGetStudent from "../../data/user-data";
+import { Spinner } from "phosphor-react";
 
 const CardStd = () => {
   const [isClick, setIsClick] = useState(false);
+  const { studentInfo, loading } = useGetStudent();
 
   const onClick = () => {
     setIsClick(!isClick);
@@ -22,55 +25,37 @@ const CardStd = () => {
         </tr>
 
         <tbody>
-          <tr>
-            <td><input type="checkbox" />ruba sameer</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-            <td>5</td>
-            <td>6</td>
-            <td>
-              <div className="pro-com ">
-                <a href="http://">عرض الملف</a>
-                <button onClick={onClick} className="add-feed"> اضافة تعليق</button>
-              </div>
-            </td>
-            {
-              isClick && <AddFeedback 
-              close={() => setIsClick(false)} />
-            }
-
-          </tr>
-          <tr>
-            <td><input type="checkbox" />ali ahmad</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-            <td>5</td>
-            <td>6</td>
-            <td>
-              <div className="pro-com ">
-                <a href="http://">عرض الملف</a>
-                <button onClick={onClick} className="add-feed"> اضافة تعليق</button>
-              </div>
-            </td>
-
-
-          </tr>
-          <tr>
-            <td><input type="checkbox" />khaleed waleed</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-            <td>5</td>
-            <td>6</td>
-            <td> 
-              <div className="pro-com ">
-                <a href="http://">عرض الملف</a>
-                <button onClick={onClick} className="add-feed"> اضافة تعليق</button>
-              </div>
-            </td>
-          </tr>
+          {
+            loading
+              ? <div style={{ display: 'flex', justifyContent: 'center', marginTop: 50 }}><Spinner /></div>
+              : (
+                studentInfo?.length ? studentInfo.map((student, index) => {
+                  <tr>
+                    <td>
+                      <input type="checkbox" />{student.fullName}</td>
+                    <td>{student.DOB}</td>
+                    <td>{student.address}</td>
+                    <td>{student.fullName}</td>
+                    <td>{student.class}</td>
+                    <td>{student.gender}</td>
+                    <td>
+                      <div className="pro-com ">
+                        <a href="http://">عرض الملف</a>
+                        <button onClick={onClick} className="add-feed"> اضافة تعليق</button>
+                      </div>
+                    </td>
+                    {
+                      isClick && <AddFeedback
+                        close={() => setIsClick(false)} />
+                    }
+                  </tr>
+                })
+                  :(
+                    <div className="no-results">
+                      <p>No results found</p>
+                    </div>
+                  )
+              )}
         </tbody>
       </table>
     </div>

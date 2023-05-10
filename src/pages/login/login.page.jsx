@@ -28,7 +28,7 @@ const Login = () => {
     }
   useEffect(() => {
     if (user?.id) {
-      navigate('/student');
+      navigate('/student-page');
     }
   }, []);
   return (

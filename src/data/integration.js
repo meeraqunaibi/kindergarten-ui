@@ -16,6 +16,31 @@ const createStudent = (student) => {
       alert(error.toString());
     });
 };
+
+const getStudent = async (id) => {
+  try {
+    const response = await fetch(`http://127.0.0.1:3001/students/${id}`);
+    if (response.status === 200) {
+      const item = await response.json();
+      return item;
+    } else {
+      return null;
+    }
+  } catch (error) {
+    console.error(error);
+    return undefined;
+  }
+};
+const getAllStudent = () => {
+  return fetch(`http://127.0.0.1:3001/students`)
+    .then((response) => response.json())
+    .catch((error) => {
+      alert(error.toString());
+    });
+};
+
 export {
-  createStudent
+  createStudent,
+  getStudent,
+  getAllStudent
 };
