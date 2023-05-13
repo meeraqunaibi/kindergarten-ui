@@ -1,0 +1,110 @@
+.student-detail {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+  direction: rtl;
+}
+
+.reg-form {
+  max-width: 600px;
+  background-color:white;
+  border: 1px solid gray;
+  border-radius: 5px;
+  margin: auto;
+}
+
+.details {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.half-row {
+  width: calc(100% / 2 - 10px);
+  margin-bottom: 10px;
+}
+
+.checkbox-half-row>div {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.full-row {
+  width: 100%;
+  /* margin-bottom: 15px; */
+}
+
+.input-box.full {
+  width: 100%;
+}
+
+.input-box input,
+.input-box textarea {
+  height: 45px;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  border: bottom width 2px;
+  transition: all 0.3 ease;
+  margin: 10px 0;
+}
+
+.gender-details {
+  margin: auto;
+}
+
+.gender-title {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.category {
+  display: flex;
+  width: 80%;
+  margin: 14px 0;
+  justify-content: space-between;
+}
+
+.category label {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+}
+
+.category label .dot {
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background-color: #d9d9d9;
+  border: 5px solid transparent;
+  transition: all 0.3s ease;
+}
+
+input[type="radio"] {
+  display: none;
+}
+.sel{
+  padding: 20px 5px;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #262627;
+    background-clip: padding-box;
+    appearance: none;
+    display: block;
+    width: 51%;
+    margin: 15px 0px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px) {
+  .half-row {
+    width: 100%;
+  }
+}

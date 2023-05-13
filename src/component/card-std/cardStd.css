@@ -1,16 +1,45 @@
-.card{
-    width: 267px;
-    height: 341px;
-    padding: 20px;
+.card {
+    width: 90%;
+    padding: 5px;
+    margin: auto;
+    direction: rtl;
+    border: 1px solid #dddddd;
+    margin-top: 55px;
+}
+
+/* .card :nth-child(3) {
+    color: gray;
+} */
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td,
+th {
+    border-bottom: 1px solid #dddddd;
+    text-align: start;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.pro-com {
     display: flex;
-    flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    background-color: white;
     margin: 10px;
     border-radius: 10px;
 }
 
-.card :nth-child(3){
-    color: gray;
+.add-feed {
+    border: none;
+    background: fixed;
+}
+.add-feed:hover{
+    cursor:pointer;
 }

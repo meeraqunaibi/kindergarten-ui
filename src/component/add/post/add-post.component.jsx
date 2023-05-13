@@ -7,11 +7,16 @@ import './add-post.css';
 
 const AddPost = props => {
   const handelPostSubmit = (e) => {
+    console.log(props.post.type);
     e.preventDefault();
-    props.onAddpost();
+    if (props.post.type === 1) {
+      props.onAddpost();    
+
+    } else if(props.post.type === 2) {
+      props.onAddtask();
+    }
     props.close();
   }
-
   return (
     <div className="popup ">
       <div className="box">
@@ -32,8 +37,9 @@ const AddPost = props => {
                   className="select"
                   options={CLASS}
                   placeholder="الجميع"
-                  onChange={(item) => props.handleInputChange(item.value, 'class')}
+                  onChange={(item) => props.handleInputChange(item.value, 'levelOfEducation')}
                 />
+
               </div>
 
               <div className="select-margin">
@@ -48,7 +54,7 @@ const AddPost = props => {
 
             </div>
 
-            <div className="post">
+            <div className="post-time">
               <label>المنشور*</label>
               <textarea
                 cols="60"
@@ -58,6 +64,7 @@ const AddPost = props => {
                 onChange={(e) => props.handleInputChange(e.target.value, 'content')}
               />
             </div>
+            <Input label="تاريخ" type="date" value={props.post.date} onChange={(e) => props.handleInputChange(e.target.value, 'date')}/>
             <div>
               <button className="add-post-btn" onClick={(e) => props.close(e)}>الغاء</button>
               <button className="add-post-btn" >نشر</button>

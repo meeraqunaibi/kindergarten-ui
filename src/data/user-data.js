@@ -1,19 +1,17 @@
-const USERS = [{
-  "id": "1",
-  "email": "admin@admin.com",
-  "password": '123456',
-  "fullName": "Ali Waleed",
-  "role": "admin"
-},
-{
-  "id": "2",
-  "email": "123456789",
-  "password": '1234',
-  "fullName": "Khaled Ahmad",
-  "role": "student"
-}
-];
+import { useEffect, useState } from "react";
+import { getAllStudent } from "./integration";
 
-export {
-  USERS
+
+const useGetStudent = () => {
+  const [state, setState] = useState({ studentInfo: [], loading: true });
+  const getStudents = async () => {
+    setState({ ...state, loading: true });
+    const data = await getAllStudent();
+    setState({ loading: false, menuItems: data });
+  };
+  useEffect(() => {
+    getStudents();
+  }, []);
+  return { ...state, getStudents };
 };
+export default useGetStudent;

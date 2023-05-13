@@ -84,11 +84,11 @@
   margin-bottom: 10px;
 }
 
-.post {
+.post-time {
   display: grid;
 }
 
-.post>label {
+.post-time>label {
   text-align: justify;
   font-family: 'Inter';
   font-style: normal;

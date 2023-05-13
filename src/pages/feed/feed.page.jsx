@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import AddPost from "../../component/add/post/add-post.component";
 import Button542 from "../../component/button542/button542";
 import Navbar from "../../component/navbar/navbar.component";
@@ -6,19 +6,20 @@ import Text917 from "../../component/text917/text917.component";
 import PostCart from "./feed-cart/post-card.feed";
 import TaskCard from "./feed-cart/task-card.feed";
 import "./feed.css";
+import { createPost, getAllPost } from "../../data/integration";
 
 const initialPost = {
   title: '',
   content: '',
-  class: '',
   type: '',
+  levelOfEducation:"",
+  date:""
 };
-
 const Feed = () => {
-  const [post, setPost] = useState(initialPost)
-
+  const [post, setPost] = useState(initialPost);
   const [isOpen, setIsOpen] = useState(false);
-  const [posts, setPosts] = useState(JSON.parse(localStorage.getItem('PostList') || '[]'));
+  const [posts, setPosts] = useState([]);
+  const [tasks, setTasks] = useState([]);
 
   const togglePost = () => {
     setIsOpen(true);
@@ -27,9 +28,17 @@ const Feed = () => {
   const addNewPost = () => {
     const newposts = [...posts, post];
     setPosts(newposts);
-    localStorage.setItem("PostList", JSON.stringify(newposts));
+    createPost(post);
     togglePost();
     setPost(initialPost);
+
+  };
+  const addNewtask = () => {
+    const newtasks = [...tasks, tasks];
+    setTasks(newtasks);
+    createPost(tasks);
+    togglePost();
+     setPost(initialPost);
 
   };
   const handleInputChange = (value, key) => {
@@ -38,9 +47,11 @@ const Feed = () => {
       [key]: value
     });
   };
-
+  useEffect(() => {
+    getAllPost().then(posts => setPosts(posts));
+  }, [])
   return (
-    <div className="body">
+    <div className="feed">
       <Navbar />
       <div className="feed-wrapper">
         <div className="posts">
@@ -51,24 +62,35 @@ const Feed = () => {
               isOpen && <AddPost
                 close={() => setIsOpen(false)}
                 onAddpost={addNewPost}
+                onAddtask={addNewtask}
                 handleInputChange={handleInputChange}
                 post={post}
               />
             }
+
           </div>
-          <div className="posts">
-            {posts.map(post => (
-              <PostCart
-                title={post.title}
-                content={post.content}
-              />
-            ))}
+          {
+            posts.length &&
+            <div className="post">
+              {posts.map(post => (
+                <PostCart
+                  title={post.title}
+                  content={post.content}
+                />
+              ))}
+            </div>
+          }
+        </div>
+        {
+          tasks.length &&
+          <div className="tasks">
+            {
+              tasks.map(task => (
+                <TaskCard title={task.title} content={task.content} date={task.date} />
+              ))
+            }
           </div>
-        </div>
-        <div className="tasks">
-          <Text917 title="المهام" />
-          <TaskCard />
-        </div>
+        }
       </div>
     </div>
   );

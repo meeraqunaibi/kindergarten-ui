@@ -8,10 +8,11 @@
   background-clip: padding-box;
   appearance: none;
   display: block;
-  width: 94%;
-  border: 1px solid ghostwhite;
-  margin: 15px 0px;
+  width: 100%;
+  border: 1px solid black;
+  margin: 5px 0px;
   border-radius: 5px;
+  box-sizing: border-box;
 }
 
 .input-group>label {

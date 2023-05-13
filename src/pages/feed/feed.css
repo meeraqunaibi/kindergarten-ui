@@ -1,15 +1,21 @@
-.body{
-    background-color: #F5F5F5;    
+.feed {
+    background-color: #F5F5F5;
     padding: 0px 100px;
     min-height: 100vh;
 }
-.feed-wrapper{
+
+.feed-wrapper {
     display: flex;
     justify-content: space-between;
     direction: rtl;
     margin-top: 40px;
 }
-.posts{
-    width: 60%;
-}
 
+.posts{
+   width: 60%;
+}
+.post{
+    overflow: scroll;
+    height: 320px; 
+    width: 500px;
+}

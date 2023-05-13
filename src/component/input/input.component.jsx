@@ -8,10 +8,10 @@ import './input.css';
  * }} props 
  */
 const Input = props => {
-  const { label, ...inputProps } = props;
+  const { label, className, ...inputProps } = props;
 
   return (
-    <div className="input-group">
+    <div className={`input-group ${Boolean(className) ? className : ''}`}>
       {
         label ? (
           <label>

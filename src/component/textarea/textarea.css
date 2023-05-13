@@ -1,0 +1,27 @@
+.input-group>textarea {
+  padding: 5px 5px;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #262627;
+  background-color: #fff;
+  background-clip: padding-box;
+  appearance: none;
+  display: block;
+  width: 100%;
+  border: 1px solid black;
+  margin: 5px 0px;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.input-group>label {
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #666;
+  letter-spacing: 0.5px;
+  text-align: right;
+  margin: 5px 5px;
+}

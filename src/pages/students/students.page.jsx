@@ -9,8 +9,6 @@ const Students = () => {
       <Navbar />
       <div className="cards">
         <CardStd />
-        <CardStd />
-        <CardStd />
       </div>
     </div>
   );

@@ -12,6 +12,7 @@ import HomePage from './pages/home/home.page';
 import Students from "./pages/students/students.page";
 import Profile from "./pages/profile/profile.page";
 import MemoryGame from "./pages/memory-game/memory-game.page";
+import AnimalsGame from "./pages/animals-game/animals-game";
 function App() {
   return (
     <div className="App">
@@ -26,6 +27,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/students" element={<Students />} />
           <Route path="/game" element={<MemoryGame />} />
+          <Route path="/animals-game" element={<AnimalsGame />} />
           <Route path="/home-ppage" element={<HomePage />} />
           <Route path='/student-page' element={<Profile />} />
           <Route path='/register-student' element={<RegisterStudent />} />

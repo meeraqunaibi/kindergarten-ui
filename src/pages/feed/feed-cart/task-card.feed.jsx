@@ -1,16 +1,23 @@
 
 import './feed-cart.css';
-const TaskCard = (props)=>{
-return(
-  <div className="task-cards">
-    <div className="cardt">
-      <input id="cb1" type="checkbox" />
-      <label for="cb1"></label>
-      <span className="task-title">مشاهدة فيديو الأرنب</span>
-      <span className="task-date">22-2-2023</span>
-      <span className="expand-task">رؤية المنشور</span>
+const TaskCard = (props) => {
+  return (
+    <div className="task-cards">
+      {
+        // props.data.map(task=> (
+        <div className="cardt">
+
+          <input id={props.title} type="checkbox" />
+          <label for={props.title}></label>
+          <span className="task-title">{props.title}</span>
+          <span className="task-date">{props.content}</span>
+          <span className="expand-task">{props.date}</span>
+        </div>
+        //  ))    
+
+      }
+
     </div>
-  </div>
-)
+  )
 }
 export default TaskCard;

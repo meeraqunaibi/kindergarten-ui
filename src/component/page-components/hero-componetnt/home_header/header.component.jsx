@@ -14,7 +14,6 @@ const HomeHeader = (props) => {
       return '/registration-ended';
     }
   }
-console.log(props.id);
   return (
     <header className="header ">
       <nav>
