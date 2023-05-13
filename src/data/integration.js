@@ -72,10 +72,6 @@ const createFeedback = (feedback) => {
       },
       body: JSON.stringify(feedback)
 
-    })
-    .then((response) => {
-      const result = response.json();
-      console.log(result);
     }).catch((error) => {
       alert(error.toString());
     });

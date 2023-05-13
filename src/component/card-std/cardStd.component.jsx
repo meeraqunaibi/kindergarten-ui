@@ -4,6 +4,7 @@ import AddFeedback from "../add/feedback/feedback.component";
 import useGetStudent from "../../data/user-data";
 import { Spinner } from "phosphor-react";
 import { UserContext } from "../providers/user-provider.component";
+import { createFeedback } from "../../data/integration";
 
 const CardStd = (props) => {
   const [isClick, setIsClick] = useState(false);
@@ -16,7 +17,7 @@ const CardStd = (props) => {
   }
 
   const addFeed = (feedback) => {
-    console.log(feedback);
+    createFeedback({ ...feedback, staff: userContext.user.id });
   }
 
   return (
