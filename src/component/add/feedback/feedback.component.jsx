@@ -1,11 +1,13 @@
-import React from "react";
-// import './add-post.css';
-
-
+import React, { useState } from "react";
 const AddFeedback = props => {
+  const [feedback, setFeedback] = useState({
+    description: '',
+    type: props.user?.role !== 'student' ? 'teacher' : 'student'
+  });
+
   const handelPostSubmit = (e) => {
-    console.log(props.post.type);
     e.preventDefault();
+    props.add({...feedback, createDate: new Date()});
     props.close();
   }
 
@@ -21,7 +23,8 @@ const AddFeedback = props => {
                 rows="6"
                 placeholder="اكتب شيء ما هنا....."
                 className="textarea"
-                onChange={(e) => props.handleInputChange(e.target.value, 'content')}
+                value={feedback.description}
+                onChange={(e) => setFeedback({ ...feedback, description: e.target.value })}
               />
             </div>
             <div>

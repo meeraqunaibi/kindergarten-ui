@@ -3,8 +3,7 @@ import logo from '../../../../images/logo.svg';
 import Button from "../button/button.component";
 import { HashLink } from "react-router-hash-link";
 
-
-const HomeHeader = (props) => {
+const HomeHeader = () => {
   const x = new Date('2023-02-19');
   const y = new Date('2023-05-17');
   const getRegisterLink = () => {

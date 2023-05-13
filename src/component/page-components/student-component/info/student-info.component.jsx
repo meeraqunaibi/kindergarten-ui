@@ -3,7 +3,7 @@ import PersonalInfo from '../personal-info/personal-info.component';
 import './student-info.css';
 import {  useNavigate, useParams } from 'react-router-dom';
 import { getStudent } from '../../../../data/integration';
-const StudentInformation = () => {
+const StudentInformation = (props) => {
   const params = useParams();
   const navigate = useNavigate();
   const [currentStudent, setCurrentStudent] = useState(null);

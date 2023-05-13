@@ -1,12 +1,12 @@
 import './note.css';
-const Note = () =>{
+const Note = (props) =>{
 return(
   <div>
  <div className='notes'>
   <span> الملاحظات </span>
  </div>
  <div className="write-note">
-      <span className='teacher-note'>احمد طالب خلوق ومهذب لكنه ينقصه بعض المتابعة ارجو من والديه الاهتمام به قليلا</span>
+      <span className='teacher-note'>{props.feedback}</span>
       <br/>
       <span className='teacher'>لقد تم النشر بواسطة نادين الجعبة   </span>
  </div>

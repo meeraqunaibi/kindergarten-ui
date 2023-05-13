@@ -12,27 +12,29 @@ import HomePage from './pages/home/home.page';
 import Students from "./pages/students/students.page";
 import Profile from "./pages/profile/profile.page";
 import MemoryGame from "./pages/memory-game/memory-game.page";
+import UserProvider from "./component/providers/user-provider.component";
 function App() {
   return (
-    <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/login" element={<Login />} />
-          {/* <Route path="signup" element={<Signup />} /> */}
-          <Route path="/forgot" element={<Forgot />} />
-          <Route path="/verify" element={<Verification />} />
-          <Route path="/reset" element={<Reset />} />
-          <Route path="/feed" element={<Feed />} />
-          <Route path="/" element={<HomePage />} />
-          <Route path="/students" element={<Students />} />
-          <Route path="/game" element={<MemoryGame />} />
-          <Route path="/home-ppage" element={<HomePage />} />
-          <Route path='/student-page' element={<Profile />} />
-          <Route path='/register-student' element={<RegisterStudent />} />
-          <Route path='/registration-ended' element={<RegistrationEnded />} />
-        </Routes>
-      </BrowserRouter>
-    </div>
+  <UserProvider>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        {/* <Route path="signup" element={<Signup />} /> */}
+        <Route path="/forgot" element={<Forgot />} />
+        <Route path="/verify" element={<Verification />} />
+        <Route path="/reset" element={<Reset />} />
+        <Route path="/feed" element={<Feed />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/students" element={<Students />} />
+        <Route path="/game" element={<MemoryGame />} />
+        <Route path="/home-ppage" element={<HomePage />} />
+        <Route path='/student-page' element={<Profile />} />
+        <Route path='/register-student' element={<RegisterStudent />} />
+        <Route path='/registration-ended' element={<RegistrationEnded />} />
+      </Routes>
+    </BrowserRouter >
+  </UserProvider>
+
   );
 }
 

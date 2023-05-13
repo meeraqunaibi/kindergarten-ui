@@ -63,11 +63,29 @@ const createPost = (post) => {
       alert(error.toString());
     });
 };
+const createFeedback = (feedback) => {
+  return fetch(`http://127.0.0.1:3001/kindergartenFeedback`,
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(feedback)
+
+    })
+    .then((response) => {
+      const result = response.json();
+      console.log(result);
+    }).catch((error) => {
+      alert(error.toString());
+    });
+};
 
 export {
   createStudent,
   getStudent,
   getAllStudent,
   getAllPost,
-  createPost
+  createPost,
+  createFeedback
 };

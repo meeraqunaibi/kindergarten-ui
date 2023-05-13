@@ -2,13 +2,14 @@ import StudentHeader from "../../component/page-components/student-component/hea
 import StudentInformation from "../../component/page-components/student-component/info/student-info.component";
 import Note from "../../component/page-components/student-component/note/note.component";
 import './profile.css';
-const Profile = () => {
+const Profile = (props) => {
+  console.log(props.feedback);
   return (
     <div className="student">
       <StudentHeader />
       <div className="note">
         <StudentInformation />
-        <Note/>
+        <Note feedback={props.feedback}/>
       </div>
     </div>
   )

@@ -1,29 +1,38 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./cardStd.css";
 import AddFeedback from "../add/feedback/feedback.component";
 import useGetStudent from "../../data/user-data";
 import { Spinner } from "phosphor-react";
+import { UserContext } from "../providers/user-provider.component";
 
-const CardStd = () => {
+const CardStd = (props) => {
   const [isClick, setIsClick] = useState(false);
   const { studentInfo, loading } = useGetStudent();
+  const userContext = useContext(UserContext);
 
-  const onClick = () => {
+  const onClick = (e) => {
+    e.preventDefault();
     setIsClick(!isClick);
   }
+
+  const addFeed = (feedback) => {
+    console.log(feedback);
+  }
+
   return (
     <div className="card">
       <table>
-        <tr>
-          <th>اسم الطالب</th>
-          <th>تاريخ الميلاد</th>
-          <th>العنوان</th>
-          <th>رقم هاتف</th>
-          <th>الصف</th>
-          <th>الجنس</th>
-          <th> </th>
-        </tr>
-
+        <thead>
+          <tr>
+            <th>اسم الطالب</th>
+            <th>تاريخ الميلاد</th>
+            <th>العنوان</th>
+            <th>رقم هاتف</th>
+            <th>الصف</th>
+            <th>الجنس</th>
+            <th> </th>
+          </tr>
+        </thead>
         <tbody>
           {
             loading
@@ -41,16 +50,19 @@ const CardStd = () => {
                     <td>
                       <div className="pro-com ">
                         <a href="http://">عرض الملف</a>
-                        <button onClick={onClick} className="add-feed"> اضافة تعليق</button>
+                        <button onClick={(e) => onClick(e)} className="add-feed"> اضافة تعليق</button>
                       </div>
                     </td>
                     {
                       isClick && <AddFeedback
-                        close={() => setIsClick(false)} />
+                        close={() => setIsClick(false)}
+                        user={userContext?.user}
+                        add={(feedback) => addFeed(feedback)}
+                      />
                     }
                   </tr>
                 })
-                  :(
+                  : (
                     <div className="no-results">
                       <p>No results found</p>
                     </div>
