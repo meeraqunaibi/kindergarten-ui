@@ -11,6 +11,14 @@ export const UserContext = React.createContext(null);
  */
 const UserProvider = (props) => {
   const [user, setUser] = useState(null);
+  const [post, setPost] = useState({
+    title: '',
+    content: '',
+    type: '',
+    levelOfEducation: "",
+    date: "",
+    addedBy:user?.id
+  });
   const [token , setTokent] = useState(null);
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -22,7 +30,7 @@ const UserProvider = (props) => {
     return loginResponsr.user;
   }
   return (
-    <UserContext.Provider value={{ user, setUser,handleLogin }}>
+    <UserContext.Provider value={{ user, setUser, handleLogin,post ,setPost}}>
       {props.children}
     </UserContext.Provider>
   );

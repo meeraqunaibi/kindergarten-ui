@@ -8,9 +8,10 @@ const PersonalInfo = (props) => {
         <div className="edit">
         </div>
       </div>
-      <Input label="رقم الهاتف" value={props.fathermMobileNum} />
-      <Input label=" الاسم " value={props.fullName}  />
-      <Input label=" تاريخ الميلاد" value={props.DOB}  />
+
+      <Input label="رقم الهاتف" value={props.currentStudent.parent?.telephoneNum} />
+      <Input label=" الاسم " value={props.currentStudent.fullName}  />
+      <Input label=" تاريخ الميلاد" value={props.currentStudent.DOB}  />
     </div>
   )
 }

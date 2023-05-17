@@ -1,12 +1,14 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./cardStd.css";
 import AddFeedback from "../add/feedback/feedback.component";
 import useGetStudent from "../../data/user-data";
 import { Spinner } from "phosphor-react";
 import { UserContext } from "../providers/user-provider.component";
-import { createFeedback } from "../../data/integration";
+import { createFeedback, getStudent } from "../../data/integration";
+import { useNavigate } from "react-router-dom";
 
-const CardStd = (props) => {
+const CardStd = () => {
+  const navigate = useNavigate();
   const [isClick, setIsClick] = useState(false);
   const { studentInfo, loading } = useGetStudent();
   const userContext = useContext(UserContext);
@@ -20,6 +22,9 @@ const CardStd = (props) => {
     createFeedback({ ...feedback, staff: userContext.user.id });
   }
 
+  const getStudentById=(studentId)=>{
+    navigate(`/student-page/${studentId}`);
+  }
   return (
     <div className="card">
       <table>
@@ -39,18 +44,19 @@ const CardStd = (props) => {
             loading
               ? <div style={{ display: 'flex', justifyContent: 'center', marginTop: 50 }}><Spinner /></div>
               : (
-                studentInfo?.length ? studentInfo.map((student, index) => {
-                  <tr>
+                studentInfo?.length ? studentInfo.map((student => {
+                  
+                  return <tr>
                     <td>
                       <input type="checkbox" />{student.fullName}</td>
                     <td>{student.DOB}</td>
-                    <td>{student.address}</td>
-                    <td>{student.fullName}</td>
-                    <td>{student.class}</td>
-                    <td>{student.gender}</td>
+                    <td>{student.transportation.address}</td>
+                    <td>{student.parent?.telephoneNum}</td>
+                    <td>{student._id}</td>
+                    <td>{student.bloodType}</td>
                     <td>
                       <div className="pro-com ">
-                        <a href="http://">عرض الملف</a>
+                        <button onClick={()=>getStudentById(student._id)}>عرض الملف</button>
                         <button onClick={(e) => onClick(e)} className="add-feed"> اضافة تعليق</button>
                       </div>
                     </td>
@@ -62,7 +68,7 @@ const CardStd = (props) => {
                       />
                     }
                   </tr>
-                })
+                }))
                   : (
                     <div className="no-results">
                       <p>No results found</p>

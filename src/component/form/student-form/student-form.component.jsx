@@ -11,7 +11,7 @@ const StudentInfo = ({ formData, setFormData }) => {
       <div className="student-detail">
         <Input className="half-row" 
         label="الاسم الرباعي" 
-        value={formData.fullName} 
+        value={formData.fullName}
         onChange={(event) => setFormData({...formData,fullName:event.target.value})} />
         <Input className="half-row" label="رقم الهوية" 
           value={formData.copyOfIdCard}
@@ -34,7 +34,7 @@ const StudentInfo = ({ formData, setFormData }) => {
           >
           {
             LIVE.map(live=>{
-              return <option key={live} value={live}>{live}</option>;
+              return <option key={live} value={live.value}>{live.lable}</option>;
             })
           }
         </Select>
@@ -47,7 +47,7 @@ const StudentInfo = ({ formData, setFormData }) => {
           >
           {
             GENDER.map(gender => {
-              return <option key={gender} value={gender}>{gender}</option>;
+              return <option key={gender} value={gender.value}>{gender.label}</option>;
             })
           }
         </Select>
@@ -73,7 +73,7 @@ const StudentInfo = ({ formData, setFormData }) => {
           >
           {
             WATCH.map(watch => {
-              return <option key={watch} value={watch}>{watch}</option>;
+              return <option key={watch} value={watch.value}>{watch.lable}</option>;
             })
           }
           

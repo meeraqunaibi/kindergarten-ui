@@ -5,32 +5,38 @@ import ParentInfo from "../../form/parent-form/parent-form.component.jsx";
 import HomeHeader from '../../page-components/hero-componetnt/home_header/header.component';
 import { useNavigate } from 'react-router-dom';
 import { createStudent } from '../../../data/integration';
+import { isDisabled } from '@testing-library/user-event/dist/utils';
 
 const RegisterStudent = () => {
-  const address ="";
   const [page, setPage] = useState(0);
   const [formData, setFormData] = useState({
     fullName: "",
-    DOB:"",
-    bloodType:"",
-    copyOfIdCard:"",
-    hadAccident:"",
-    sleepDuringTheDay:"",
-    withWhomChildLive:"",
-    likeWatchingTV:"",
-    description:"",
-    transportation: [address],
-    levelOfEducation:"",
-    image:"",
-    strength:"",
+    DOB: "",
+    bloodType: "A+",
+    copyOfIdCard: "",
+    hadAccident: 0,
+    sleepDuringTheDay: 0,
+    withWhomChildLive: 0,
+    likeWatchingTV: 0,
+    transportation: {
+      address: "",
+      time_period: "",
+    },
+    afterSchoolStudent: "",
+    image: "",
+    strength: "",
     weakness: "",
+    parent:{
     motherName: "",
     fatherName: "",
     fathermMobileNum: "",
     motherMobileNum: "",
     motherLevelOfEdu: "",
-    fatherLevelOfEdu:"",
-    facebookProfileLink: ""
+    fatherLevelOfEdu: "",
+    facebookProfileLink: "",
+    telephoneNum: "" 
+    },
+    gender: 0
 
   });
   const formTitle = ["معلومات عن الطالب", "معلومات عن الأهل"];
@@ -50,13 +56,13 @@ const RegisterStudent = () => {
  */
   const submitHandler = async e => {
     e.preventDefault();
+    console.log(formData);
     const res = await createStudent(formData)
-    console.log(res);
-    if (res) {
+    if (!res) {
+           alert("Error adding the item!");
+    } else {
       alert("Item added successfully");
       navigate('/home-page');
-    } else {
-      alert("Error adding the item!");
     }
   }
   return (
@@ -75,8 +81,7 @@ const RegisterStudent = () => {
           className='b'
           onClick={(e) => {
             if (page === formTitle.length - 1) {
-              alert("يرجى الذهاب للروضة من أجل تأكيد عملية التسجيل")
-              submitHandler(e);
+              return submitHandler(e);
             } else {
               setPage(currpage => currpage + 1)
             }

@@ -13,6 +13,7 @@ import Students from "./pages/students/students.page";
 import Profile from "./pages/profile/profile.page";
 import MemoryGame from "./pages/memory-game/memory-game.page";
 import UserProvider from "./component/providers/user-provider.component";
+import { getStudent } from "./data/integration";
 function App() {
   return (
   <UserProvider>
@@ -27,8 +28,8 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/students" element={<Students />} />
         <Route path="/game" element={<MemoryGame />} />
-        <Route path="/home-ppage" element={<HomePage />} />
-        <Route path='/student-page' element={<Profile />} />
+        <Route path="/home-page" element={<HomePage />} />
+        <Route path='/student-page/:id' element={<Profile />} loader={getStudent}/>
         <Route path='/register-student' element={<RegisterStudent />} />
         <Route path='/registration-ended' element={<RegistrationEnded />} />
       </Routes>

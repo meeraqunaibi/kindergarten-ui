@@ -2,16 +2,19 @@ const CLASS = [{ label: 'صف العصافير', value: 1 }, { label: 'صف ال
 const TYPE = [{ label: 'لعبة', value: 1 }, { label: 'اعلان', value: 2 }];
 const LIVE =
   [
-    'الأم والأب',
-    'الأب',
-    'الأم',
-    'الجد والجدة',
-    'الأخ والأخت'];
+    { lable: 'الأم والأب', value: 0 },
+    { lable: 'الأم', value: 1 },
+    { lable: ' الأب', value: 2 },
+    { lable: 'الجد والجدة', value: 3 },
+    { lable: 'الأخ والأخت', value: 4 }];
 
-const GENDER = ["ذكر", "أنثى"];
+const GENDER = [{label:"ذكر",value:0},{label:"أنثى",value:1}];
 const BLOOD = ["A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"];
-const WATCH = ["نعم", "لا"]
-const TRAN = ["مواصلات كاملة (ذهابا وايابا)", "ذهابا فقط", "ايابا فقط", "بدون مواصلات"];
+const WATCH = [{lable:"نعم",value:0}, {lable:"لا",value:1}];
+const SLEEP = [{ lable: "نعم", value: 0 }, { lable: "لا", value: 1 }];
+const ACC = [{ lable: "نعم", value: 0 }, { lable: "لا", value: 1 }];
+
+const TRAN = [{ value: 0, label: "مواصلات كاملة (ذهاباوايابا)" }, { value: 1, label: "ذهابا فقط" }, { value: 2, label: "ايابا فقط" }, { value: 3, label: "بدون مواصلات" }];
 
 export {
   CLASS,
@@ -20,5 +23,7 @@ export {
   GENDER,
   BLOOD,
   WATCH,
-  TRAN
+  TRAN,
+  SLEEP,
+  ACC
 };

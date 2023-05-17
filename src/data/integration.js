@@ -22,13 +22,13 @@ const getStudent = async (id) => {
     const response = await fetch(`http://127.0.0.1:3001/students/${id}`);
     if (response.status === 200) {
       const item = await response.json();
+      console.log(response);
       return item;
     } else {
       return null;
     }
   } catch (error) {
-    console.error(error);
-    return undefined;
+    alert(error.toString());
   }
 };
 const getAllStudent = () => {

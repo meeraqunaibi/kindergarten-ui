@@ -7,7 +7,8 @@ const useGetStudent = () => {
   const getStudents = async () => {
     setState({ ...state, loading: true });
     const data = await getAllStudent();
-    setState({ loading: false, menuItems: data });
+    console.log(data);
+    setState({ loading: false, studentInfo: data });
   };
   useEffect(() => {
     getStudents();

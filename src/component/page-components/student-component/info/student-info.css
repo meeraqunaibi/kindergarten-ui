@@ -13,9 +13,7 @@
   margin: 15px 15px;
 }
 
-.student-introduction {
-  display: flex;
-}
+
 
 .student-class {
   display: block;
@@ -43,4 +41,7 @@
   line-height: 18px;
   text-align: right;
   color: #8B8B8B;
+}
+.student-form{
+  display:flex
 }

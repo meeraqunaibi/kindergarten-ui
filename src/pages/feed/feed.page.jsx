@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import AddPost from "../../component/add/post/add-post.component";
 import Button542 from "../../component/button542/button542";
 import Navbar from "../../component/navbar/navbar.component";
@@ -7,16 +7,19 @@ import PostCart from "./feed-cart/post-card.feed";
 import TaskCard from "./feed-cart/task-card.feed";
 import "./feed.css";
 import { createPost, getAllPost } from "../../data/integration";
+import { UserContext } from "../../component/providers/user-provider.component";
 
-const initialPost = {
-  title: '',
-  content: '',
-  type: '',
-  levelOfEducation:"",
-  date:""
-};
-const Feed = () => {
-  const [post, setPost] = useState(initialPost);
+// const initialPost = {
+//   title: '',
+//   content: '',
+//   type: '',
+//   levelOfEducation: "",
+//   date: "",
+//   addedBy: userContext?.user
+// };
+const Feed = () => {  
+  const {post,setPost} = useContext(UserContext);
+
   const [isOpen, setIsOpen] = useState(false);
   const [posts, setPosts] = useState([]);
   const [tasks, setTasks] = useState([]);
@@ -26,11 +29,11 @@ const Feed = () => {
   }
 
   const addNewPost = () => {
-    const newposts = [...posts, post];
+    const newposts = [{ ...posts, post}];
     setPosts(newposts);
     createPost(post);
     togglePost();
-    setPost(initialPost);
+    setPost(post);
 
   };
   const addNewtask = () => {
@@ -38,7 +41,7 @@ const Feed = () => {
     setTasks(newtasks);
     createPost(tasks);
     togglePost();
-     setPost(initialPost);
+     setPost(post);
 
   };
   const handleInputChange = (value, key) => {
@@ -74,8 +77,10 @@ const Feed = () => {
             <div className="post">
               {posts.map(post => (
                 <PostCart
-                  title={post.title}
-                  content={post.content}
+                data={post}
+                  // title={post.title}
+                  // content={post.content}
+                  // addedBy={post.addedBy}
                 />
               ))}
             </div>
