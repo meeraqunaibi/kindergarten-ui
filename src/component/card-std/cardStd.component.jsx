@@ -18,9 +18,9 @@ const CardStd = () => {
     setIsClick(!isClick);
   };
 
-  const addFeed = (feedback) => {
-    createFeedback({ ...feedback, staff: userContext.user.id ,student:studentInfo?._id});
-    console.log(studentInfo.id);
+  const addFeed = (feedback, student) => {
+    createFeedback({ ...feedback, staff: userContext.user.id, student });
+    console.log(studentInfo);
   };
 
   const getStudentById = (studentId) => {
@@ -79,7 +79,7 @@ const CardStd = () => {
                     <AddFeedback
                       close={() => setIsClick(false)}
                       user={userContext?.user}
-                      add={(feedback) => addFeed(feedback)}
+                      add={(feedback) => addFeed(feedback, student._id)}
                     />
                   )}
                 </tr>
