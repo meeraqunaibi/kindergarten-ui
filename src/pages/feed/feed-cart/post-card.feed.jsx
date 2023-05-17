@@ -10,7 +10,7 @@ const PostCart = (props) => {
       <p>
         {props.data.content}
       </p>
-      {props.data.addedBy && <label>تم النشر بواسطة {props.data.addedBy.username}</label>}
+      {props.data.addedBy && <label>تم النشر بواسطة {props.data.addedBy.username }</label>}
     </div>
   )
 }
