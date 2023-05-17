@@ -1,13 +1,6 @@
 import React from "react";
 import "./confirm.css";
-import { createUser, deleteStudent } from "../../data/integration";
 const ConfirmCard = (props) => {
-  const deleteStudentById = (studentId) => {
-    deleteStudent(studentId);
-  };
-  const confirmStudent = (student) => {
-    createUser(student);
-  };
 
   const { student } = props;
   return (
@@ -15,8 +8,8 @@ const ConfirmCard = (props) => {
       <span> {student.fullName}</span>
       <span> {student.copyOfIdCard}</span>
       <div className="action-con">
-        <button onClick={() => confirmStudent(student)}>تأكيد</button>
-        <button onClick={() => deleteStudentById(student._id)}>حذف</button>
+        <button onClick={() => props.onConfirm(student)}>تأكيد</button>
+        <button onClick={() => props.onDelete(student._id)}>حذف</button>
       </div>
     </div>
   );

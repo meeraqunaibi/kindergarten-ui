@@ -19,7 +19,8 @@ const CardStd = () => {
   };
 
   const addFeed = (feedback) => {
-    createFeedback({ ...feedback, staff: userContext.user.id });
+    createFeedback({ ...feedback, staff: userContext.user.id ,student:studentInfo?._id});
+    console.log(studentInfo.id);
   };
 
   const getStudentById = (studentId) => {

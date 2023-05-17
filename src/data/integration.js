@@ -89,22 +89,18 @@ const createFeedback = (feedback) => {
     alert(error.toString());
   });
 };
-const deleteStudent = async (id) => {
-  try {
-    const response = await fetch(`http://127.0.0.1:3001/students/${id}`, {
-      method: "DELETE",
-    });
-    if (response) {
-      return true;
-    } else {
-      return null;
-    }
-  } catch (error) {
-    console.error(error);
-    return undefined;
-  }
-};
 
+const deleteStudent = async (id) => {
+  await fetch(`http://127.0.0.1:3001/students/${id}`, { method: 'DELETE' })
+    .then(res => {
+      if (res.status >= 200 && res.status <= 299) {
+        console.debug('Successfully delete student');
+        return true;
+      } else {
+        console.debug('Failed', res.status);
+      }
+    });
+};
 export {
   createStudent,
   getStudent,
