@@ -12,20 +12,19 @@ import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 
 const Login = () => {
-
-const navigate = useNavigate();
+  const navigate = useNavigate();
   const userContext = useContext(UserContext);
-   const singIn = async (e) =>{
-
-     const user = await userContext.handleLogin(e);
-     if (user && user.role === 'admin') {
-       navigate("/students");
-     } else if (user && user.role === 'student') {
-       navigate("/student-page");
-     } else {
-       alert("Email or Password are not correct! Please try again.");
-     }
-   }
+  const singIn = async (e) => {
+    const user = await userContext.handleLogin(e);
+    console.log(user.profile);
+    if (user && user.role === "admin") {
+      navigate("/students");
+    } else if (user && user.role === "student") {
+      navigate(`/student-page/${user.profile}`);
+    } else {
+      alert("Email or Password are not correct! Please try again.");
+    }
+  };
   return (
     <div className="container">
       <div className="graphics">

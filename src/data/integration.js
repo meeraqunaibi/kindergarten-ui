@@ -1,18 +1,34 @@
 const createStudent = (student) => {
   console.log(student);
-  return fetch(`http://127.0.0.1:3001/students/add`,
-    {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(student)
-
-    })
+  return fetch(`http://127.0.0.1:3001/students/add`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(student),
+  })
     .then((response) => {
       const result = response.json();
       console.log(result);
-    }).catch((error) => {
+    })
+    .catch((error) => {
+      alert(error.toString());
+    });
+};
+const createUser = (user) => {
+  console.log(user);
+  return fetch(`http://127.0.0.1:3001/users/confirm`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(user),
+  })
+    .then((response) => {
+      const result = response.json();
+      console.log(result);
+    })
+    .catch((error) => {
       alert(error.toString());
     });
 };
@@ -47,34 +63,46 @@ const getAllPost = () => {
 };
 const createPost = (post) => {
   console.log(post);
-  return fetch(`http://127.0.0.1:3001/posts/add`,
-    {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(post)
-
-    })
+  return fetch(`http://127.0.0.1:3001/posts/add`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(post),
+  })
     .then((response) => {
       const result = response.json();
       console.log(result);
-    }).catch((error) => {
+    })
+    .catch((error) => {
       alert(error.toString());
     });
 };
 const createFeedback = (feedback) => {
-  return fetch(`http://127.0.0.1:3001/kindergartenFeedback`,
-    {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(feedback)
-
-    }).catch((error) => {
-      alert(error.toString());
+  return fetch(`http://127.0.0.1:3001/kindergartenFeedback`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(feedback),
+  }).catch((error) => {
+    alert(error.toString());
+  });
+};
+const deleteStudent = async (id) => {
+  try {
+    const response = await fetch(`http://127.0.0.1:3001/students/${id}`, {
+      method: "DELETE",
     });
+    if (response) {
+      return true;
+    } else {
+      return null;
+    }
+  } catch (error) {
+    console.error(error);
+    return undefined;
+  }
 };
 
 export {
@@ -83,5 +111,7 @@ export {
   getAllStudent,
   getAllPost,
   createPost,
-  createFeedback
+  createFeedback,
+  deleteStudent,
+  createUser,
 };

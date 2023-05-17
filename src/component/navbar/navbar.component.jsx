@@ -13,6 +13,7 @@ const Navbar = () => {
         <Link to="/game">ألعاب</Link>
         <Link to="/students">الزملاء</Link>
         <Link to="/student-page/:id">حسابي</Link>
+        <Link to="/confirm-register">تأكيد التسجيل</Link>
       </div>
       <div className="nav-icon">
         <img src={navImg} alt="icon" />

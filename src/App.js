@@ -14,6 +14,7 @@ import Profile from "./pages/profile/profile.page";
 import MemoryGame from "./pages/memory-game/memory-game.page";
 import UserProvider from "./component/providers/user-provider.component";
 import { getStudent } from "./data/integration";
+import ConfirmRegister from "./pages/confirm/confirm.page";
 function App() {
   return (
   <UserProvider>
@@ -30,6 +31,7 @@ function App() {
         <Route path="/game" element={<MemoryGame />} />
         <Route path="/home-page" element={<HomePage />} />
         <Route path='/student-page/:id' element={<Profile />} loader={getStudent}/>
+        <Route path='/confirm-register' element={<ConfirmRegister />} />
         <Route path='/register-student' element={<RegisterStudent />} />
         <Route path='/registration-ended' element={<RegistrationEnded />} />
       </Routes>

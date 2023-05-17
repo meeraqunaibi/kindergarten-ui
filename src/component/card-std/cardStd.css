@@ -28,18 +28,11 @@ tr:nth-child(even) {
     background-color: #dddddd;
 }
 
-.pro-com {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin: 10px;
-    border-radius: 10px;
-}
-
-.add-feed {
+/* .add-feed {
     border: none;
     background: fixed;
-}
+    
+} */
 .add-feed:hover{
     cursor:pointer;
 }
