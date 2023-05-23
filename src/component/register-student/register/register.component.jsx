@@ -1,11 +1,11 @@
-import { useState } from 'react';
-import './register.css';
+import { useState } from "react";
+import "./register.css";
 import StudentInfo from "../../form/student-form/student-form.component.jsx";
 import ParentInfo from "../../form/parent-form/parent-form.component.jsx";
-import HomeHeader from '../../page-components/hero-componetnt/home_header/header.component';
-import { useNavigate } from 'react-router-dom';
-import { createStudent } from '../../../data/integration';
-import { isDisabled } from '@testing-library/user-event/dist/utils';
+import HomeHeader from "../../page-components/hero-componetnt/home_header/header.component";
+import { useNavigate } from "react-router-dom";
+import { createStudent } from "../../../data/integration";
+import { isDisabled } from "@testing-library/user-event/dist/utils";
 
 const RegisterStudent = () => {
   const [page, setPage] = useState(0);
@@ -26,72 +26,72 @@ const RegisterStudent = () => {
     image: "",
     strength: "",
     weakness: "",
-    parent:{
-    motherName: "",
-    fatherName: "",
-    fathermMobileNum: "",
-    motherMobileNum: "",
-    motherLevelOfEdu: "",
-    fatherLevelOfEdu: "",
-    facebookProfileLink: "",
-    telephoneNum: "" 
+    parent: {
+      motherName: "",
+      fatherName: "",
+      fathermMobileNum: "",
+      motherMobileNum: "",
+      motherLevelOfEdu: "",
+      fatherLevelOfEdu: "",
+      facebookProfileLink: "",
+      telephoneNum: "",
     },
-    gender: 0
-
+    gender: 0,
+    confirm: false,
   });
   const formTitle = ["معلومات عن الطالب", "معلومات عن الأهل"];
   const PageDisplay = () => {
     if (page === 0) {
-      return <StudentInfo formData={formData} setFormData={setFormData} />
+      return <StudentInfo formData={formData} setFormData={setFormData} />;
+    } else {
+      return <ParentInfo formData={formData} setFormData={setFormData} />;
     }
-    else {
-      return <ParentInfo formData={formData} setFormData={setFormData} />
-    }
-  }
+  };
   const navigate = useNavigate();
 
   /**
- * Handler function for the form onSubmit event.
- * @param {React.FormEvent<HTMLFormElement>} e Event object.
- */
-  const submitHandler = async e => {
+   * Handler function for the form onSubmit event.
+   * @param {React.FormEvent<HTMLFormElement>} e Event object.
+   */
+  const submitHandler = async (e) => {
     e.preventDefault();
     console.log(formData);
-    const res = await createStudent(formData)
+    const res = await createStudent(formData);
     if (!res) {
-           alert("Error adding the item!");
+      alert("Error adding the item!");
     } else {
       alert("Item added successfully");
-      navigate('/home-page');
+      navigate("/home-page");
     }
-  }
+  };
   return (
-    <div className='form'>
+    <div className="form">
       <HomeHeader />
       <dir className="body">{PageDisplay()}</dir>
       <div>
         <button
-          className='b'
+          className="b"
           onClick={() => {
-            setPage(currpage => currpage - 1)
+            setPage((currpage) => currpage - 1);
           }}
           disabled={page === 0}
-        >السابق</button>
+        >
+          السابق
+        </button>
         <button
-          className='b'
+          className="b"
           onClick={(e) => {
             if (page === formTitle.length - 1) {
               return submitHandler(e);
             } else {
-              setPage(currpage => currpage + 1)
+              setPage((currpage) => currpage + 1);
             }
-          }
-          }>
+          }}
+        >
           {page === formTitle.length - 1 ? "ارسال" : "التالي"}
         </button>
       </div>
     </div>
-
-  )
-}
+  );
+};
 export default RegisterStudent;
