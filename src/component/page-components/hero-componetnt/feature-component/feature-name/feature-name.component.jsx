@@ -6,7 +6,7 @@ const FeatureName = (props) => {
       <div className='block'>
         <img src={props.img} alt="" />
         <span className='feature-name'>{props.name}</span>
-        <p className='feature-description'>يتم اتباع نطام دمج اللعب مع الندريس</p>
+        <p className='feature-description'>{props.text}</p>
       </div>
     </div>
   )
