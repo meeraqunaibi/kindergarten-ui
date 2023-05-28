@@ -19,7 +19,6 @@ import { UserContext } from "../../component/providers/user-provider.component";
 // };
 const Feed = () => {  
   const {post,setPost} = useContext(UserContext);
-
   const [isOpen, setIsOpen] = useState(false);
   const [posts, setPosts] = useState([]);
   const [tasks, setTasks] = useState([]);
@@ -34,8 +33,8 @@ const Feed = () => {
     createPost(post);
     togglePost();
     setPost(post);
-
   };
+  
   const addNewtask = () => {
     const newtasks = [...tasks, tasks];
     setTasks(newtasks);

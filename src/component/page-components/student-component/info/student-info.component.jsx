@@ -10,7 +10,7 @@ const StudentInformation = (props) => {
             <img className='student-img' src={`http://localhost:3001/${props.student?.image?.replaceAll('\\', '/').replace('upload/', '')}`} alt="" />
                 <div className='information'>
                   <span className='student-name'>{(props.student?.fullName)}</span>
-                  <span className='student-class'>{props.student?.parent?.motherName}</span>
+                  <span className='student-class'>{props.student?.parent?.copyOfIdCard}</span>
                 </div>
               </div>
           <PersonalInfo currentStudent={props.student} />

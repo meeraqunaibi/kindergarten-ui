@@ -1,0 +1,12 @@
+.coll-card{
+    width: 247px;
+    height: 270px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #f5f5f5;
+    margin: 40px;
+    border-radius: 10px;
+}

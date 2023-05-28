@@ -1,15 +1,13 @@
 const createStudent = (student) => {
   return fetch(`http://127.0.0.1:3001/students/add`, {
     method: "POST",
-    body: student
-  })
-    .then((response) => {
-      if (response.status >= 400) {
-        throw new Error(response);
-      }
-
-      return true;
-    })
+    body: student,
+  }).then((response) => {
+    if (response.status >= 400) {
+      throw new Error(response);
+    }
+    return true;
+  });
 };
 const createUser = (user) => {
   console.log(user);
@@ -29,7 +27,7 @@ const createUser = (user) => {
     });
 };
 
-const   getStudent = async (id) => {
+const getStudent = async (id) => {
   try {
     const response = await fetch(`http://127.0.0.1:3001/students/${id}`);
     if (response.status === 200) {
@@ -87,19 +85,22 @@ const createFeedback = (feedback) => {
 };
 
 const deleteStudent = async (id) => {
-  await fetch(`http://127.0.0.1:3001/students/${id}`, { method: 'DELETE' })
-    .then(res => {
-      if (res.status >= 200 && res.status <= 299) {
-        console.debug('Successfully delete student');
-        return true;
-      } else {
-        console.debug('Failed', res.status);
-      }
-    });
+  await fetch(`http://127.0.0.1:3001/students/${id}`, {
+    method: "DELETE",
+  }).then((res) => {
+    if (res.status >= 200 && res.status <= 299) {
+      console.debug("Successfully delete student");
+      return true;
+    } else {
+      console.debug("Failed", res.status);
+    }
+  });
 };
 const getFeedback = async (id) => {
   try {
-    const response = await fetch(`http://127.0.0.1:3001/kindergartenFeedback/${id}`);
+    const response = await fetch(
+      `http://127.0.0.1:3001/kindergartenFeedback/${id}`
+    );
     if (response.status === 200) {
       const item = await response.json();
       console.log(response);
@@ -128,5 +129,5 @@ export {
   deleteStudent,
   createUser,
   getFeedback,
-  getAllConfirm
+  getAllConfirm,
 };

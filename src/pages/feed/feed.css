@@ -15,7 +15,7 @@
    width: 60%;
 }
 .post{
-    overflow: scroll;
+    overflow-y: scroll;
     height: 320px; 
-    width: 500px;
+    min-width: 70%;
 }

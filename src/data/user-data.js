@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getAllStudent } from "./integration";
+import { getAllStudent, getAllPost } from "./integration";
 
 
 const useGetStudent = () => {
@@ -15,4 +15,18 @@ const useGetStudent = () => {
   }, []);
   return { ...state, getStudents };
 };
-export default useGetStudent;
+
+const useGetPosts = () => {
+  const [state, setState] = useState({ posts: [], loading: true });
+  const getPosts = async () => {
+    setState({ ...state, loading: true });
+    const data = await getAllPost();
+    console.log(data);
+    setState({ loading: false, posts: data });
+  };
+  useEffect(() => {
+    getPosts();
+  }, []);
+  return { ...state, getPosts };
+};
+export default {useGetStudent, useGetPosts};

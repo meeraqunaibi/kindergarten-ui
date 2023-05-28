@@ -57,8 +57,8 @@ const RegisterStudent = () => {
   const submitHandler = async (e) => {
     e.preventDefault();
     const payload = new FormData();
-
     Object.entries(formData).forEach(([key, value]) => {
+      console.log(value, " ", key);
       if (typeof (value) === 'object' && key !== 'image') {
         payload.append(key, JSON.stringify(value));
       } else {

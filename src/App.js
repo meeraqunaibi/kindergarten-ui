@@ -4,7 +4,6 @@ import Feed from "./pages/feed/feed.page";
 import Forgot from "./pages/forgot/forgot.page";
 import Login from "./pages/login/login.page";
 import Reset from "./pages/reset/reset.page";
-import Signup from "./pages/signup/signup.page";
 import Verification from "./pages/verification/verification.page";
 import RegistrationEnded from './component/register-student/over/registration-ended.component';
 import RegisterStudent from './component/register-student/register/register.component';
@@ -14,6 +13,7 @@ import Profile from "./pages/profile/profile.page";
 import MemoryGame from "./pages/memory-game/memory-game.page";
 import UserProvider from "./component/providers/user-provider.component";
 import ConfirmRegister from "./pages/confirm/confirm.page";
+import Colleagues from "./pages/colleagues/colleagues.page";
 function App() {
   return (
   <UserProvider>
@@ -27,6 +27,7 @@ function App() {
         <Route path="/feed" element={<Feed />} />
         <Route path="/" element={<HomePage />} />
         <Route path="/students" element={<Students />} />
+        <Route path="/colleagues" element={<Colleagues />} />
         <Route path="/game" element={<MemoryGame />} />
         <Route path="/home-page" element={<HomePage />} />
         <Route path='/student-page/:id' element={<Profile />} />
