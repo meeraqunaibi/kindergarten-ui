@@ -4,7 +4,6 @@ import Feed from "./pages/feed/feed.page";
 import Forgot from "./pages/forgot/forgot.page";
 import Login from "./pages/login/login.page";
 import Reset from "./pages/reset/reset.page";
-import Signup from "./pages/signup/signup.page";
 import Verification from "./pages/verification/verification.page";
 import RegistrationEnded from './component/register-student/over/registration-ended.component';
 import RegisterStudent from './component/register-student/register/register.component';
@@ -12,6 +11,7 @@ import HomePage from './pages/home/home.page';
 import Students from "./pages/students/students.page";
 import Profile from "./pages/profile/profile.page";
 import MemoryGame from "./pages/memory-game/memory-game.page";
+import AnimalsGame from "./pages/animals-game/animals-game";
 import UserProvider from "./component/providers/user-provider.component";
 import ConfirmRegister from "./pages/confirm/confirm.page";
 function App() {
@@ -33,6 +33,8 @@ function App() {
         <Route path='/confirm-register' element={<ConfirmRegister />} />
         <Route path='/register-student' element={<RegisterStudent />} />
         <Route path='/registration-ended' element={<RegistrationEnded />} />
+          <Route path="/animals-game" element={<AnimalsGame />} />
+
       </Routes>
     </BrowserRouter >
   </UserProvider>
