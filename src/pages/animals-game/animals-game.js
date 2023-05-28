@@ -35,7 +35,7 @@ const AnimalsGame = () => {
 
     return ( 
 <div className="game-wrapper">
-      <h1>Animal Voice</h1>
+      <h1>أصوات الحيوانات</h1>
       <div className="card-grid">
         {cardImgVoic.map((card) => (
           <SingleCardAnimals
