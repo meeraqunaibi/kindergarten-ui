@@ -11,6 +11,7 @@ import HomePage from './pages/home/home.page';
 import Students from "./pages/students/students.page";
 import Profile from "./pages/profile/profile.page";
 import MemoryGame from "./pages/memory-game/memory-game.page";
+import AnimalsGame from "./pages/animals-game/animals-game";
 import UserProvider from "./component/providers/user-provider.component";
 import ConfirmRegister from "./pages/confirm/confirm.page";
 import Colleagues from "./pages/colleagues/colleagues.page";
@@ -34,6 +35,8 @@ function App() {
         <Route path='/confirm-register' element={<ConfirmRegister />} />
         <Route path='/register-student' element={<RegisterStudent />} />
         <Route path='/registration-ended' element={<RegistrationEnded />} />
+          <Route path="/animals-game" element={<AnimalsGame />} />
+
       </Routes>
     </BrowserRouter >
   </UserProvider>
