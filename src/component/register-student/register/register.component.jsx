@@ -5,7 +5,6 @@ import ParentInfo from "../../form/parent-form/parent-form.component.jsx";
 import HomeHeader from "../../page-components/hero-componetnt/home_header/header.component";
 import { useNavigate } from "react-router-dom";
 import { createStudent } from "../../../data/integration";
-import { isDisabled } from "@testing-library/user-event/dist/utils";
 
 const RegisterStudent = () => {
   const [page, setPage] = useState(0);
@@ -40,7 +39,9 @@ const RegisterStudent = () => {
     confirm: false,
   });
   const formTitle = ["معلومات عن الطالب", "معلومات عن الأهل"];
+
   const PageDisplay = () => {
+    console.log(formData);
     if (page === 0) {
       return <StudentInfo formData={formData} setFormData={setFormData} />;
     } else {
@@ -55,14 +56,20 @@ const RegisterStudent = () => {
    */
   const submitHandler = async (e) => {
     e.preventDefault();
-    console.log(formData);
-    const res = await createStudent(formData);
-    if (!res) {
-      alert("Error adding the item!");
-    } else {
+    const payload = new FormData();
+
+    Object.entries(formData).forEach(([key, value]) => {
+      if (typeof (value) === 'object' && key !== 'image') {
+        payload.append(key, JSON.stringify(value));
+      } else {
+        payload.append(key, value);
+      }
+    });
+
+    createStudent(payload).then(() => {
       alert("Item added successfully");
       navigate("/home-page");
-    }
+    }).catch(item => alert("Error adding the item!zzzzzzzzzzzzzzzzz", item));
   };
   return (
     <div className="form">

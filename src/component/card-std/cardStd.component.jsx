@@ -4,28 +4,29 @@ import AddFeedback from "../add/feedback/feedback.component";
 import useGetStudent from "../../data/user-data";
 import { Spinner } from "phosphor-react";
 import { UserContext } from "../providers/user-provider.component";
-import { createFeedback, getStudent } from "../../data/integration";
+import { createFeedback } from "../../data/integration";
 import { useNavigate } from "react-router-dom";
 
 const CardStd = () => {
   const navigate = useNavigate();
   const [isClick, setIsClick] = useState(false);
+  const [chosenStudent, setChosenStudent] = useState(null);
   const { studentInfo, loading } = useGetStudent();
   const userContext = useContext(UserContext);
 
-  const onClick = (e) => {
-    e.preventDefault();
+  const onClick = (student) => {
     setIsClick(!isClick);
+    setChosenStudent(student);
   };
 
-  const addFeed = (feedback, student) => {
-    createFeedback({ ...feedback, staff: userContext.user.id, student });
-    console.log(studentInfo);
+  const addFeed = (feedback) => {
+    createFeedback({ ...feedback, staff: userContext.user.id });
   };
 
   const getStudentById = (studentId) => {
     navigate(`/student-page/${studentId}`);
   };
+
   return (
     <div className="card">
       <table>
@@ -57,7 +58,6 @@ const CardStd = () => {
               return (
                 <tr>
                   <td>
-                    <input type="checkbox" />
                     {student.fullName}
                   </td>
                   <td>{student.DOB}</td>
@@ -71,17 +71,10 @@ const CardStd = () => {
                     </button>
                   </td>
                   <td >
-                    <button onClick={(e) => onClick(e)} >
+                    <button onClick={() => onClick(student)} >
                       اضافة تعليق
                     </button>
                   </td>
-                  {isClick && (
-                    <AddFeedback
-                      close={() => setIsClick(false)}
-                      user={userContext?.user}
-                      add={(feedback) => addFeed(feedback, student._id)}
-                    />
-                  )}
                 </tr>
               );
             })
@@ -92,6 +85,14 @@ const CardStd = () => {
           )}
         </tbody>
       </table>
+      {isClick && (
+        <AddFeedback
+          close={() => setIsClick(false)}
+          user={userContext?.user}
+          student={chosenStudent}
+          add={(feedback) => addFeed(feedback)}
+        />
+      )}
     </div>
   );
 };

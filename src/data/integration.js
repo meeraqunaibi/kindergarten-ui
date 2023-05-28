@@ -1,19 +1,15 @@
 const createStudent = (student) => {
-  console.log(student);
   return fetch(`http://127.0.0.1:3001/students/add`, {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(student),
+    body: student
   })
     .then((response) => {
-      const result = response.json();
-      console.log(result);
+      if (response.status >= 400) {
+        throw new Error(response);
+      }
+
+      return true;
     })
-    .catch((error) => {
-      alert(error.toString());
-    });
 };
 const createUser = (user) => {
   console.log(user);
@@ -33,7 +29,7 @@ const createUser = (user) => {
     });
 };
 
-const getStudent = async (id) => {
+const   getStudent = async (id) => {
   try {
     const response = await fetch(`http://127.0.0.1:3001/students/${id}`);
     if (response.status === 200) {
@@ -101,6 +97,27 @@ const deleteStudent = async (id) => {
       }
     });
 };
+const getFeedback = async (id) => {
+  try {
+    const response = await fetch(`http://127.0.0.1:3001/kindergartenFeedback/${id}`);
+    if (response.status === 200) {
+      const item = await response.json();
+      console.log(response);
+      return item;
+    } else {
+      return null;
+    }
+  } catch (error) {
+    alert(error.toString());
+  }
+};
+const getAllConfirm = () => {
+  return fetch(`http://127.0.0.1:3001/students/confirm-register`)
+    .then((response) => response.json())
+    .catch((error) => {
+      alert(error.toString());
+    });
+};
 export {
   createStudent,
   getStudent,
@@ -110,4 +127,6 @@ export {
   createFeedback,
   deleteStudent,
   createUser,
+  getFeedback,
+  getAllConfirm
 };

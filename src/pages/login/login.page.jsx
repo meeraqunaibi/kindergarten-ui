@@ -16,7 +16,6 @@ const Login = () => {
   const userContext = useContext(UserContext);
   const singIn = async (e) => {
     const user = await userContext.handleLogin(e);
-    console.log(user.profile);
     if (user && user.role === "admin") {
       navigate("/students");
     } else if (user && user.role === "student") {

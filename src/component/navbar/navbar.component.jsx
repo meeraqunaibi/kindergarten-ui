@@ -14,7 +14,7 @@ const Navbar = () => {
         <Link to="/feed" >الرئيسية</Link>
         <Link to="/game">ألعاب</Link>
         <Link to="/students">الزملاء</Link>
-        <Link to={`/student-page/${userContext?.user.profile}`}>حسابي</Link>
+        <Link to={`/student-page/${userContext?.user?.profile}`}>حسابي</Link>
         <Link to="/confirm-register">تأكيد التسجيل</Link>
       </div>
       <div className="nav-icon">

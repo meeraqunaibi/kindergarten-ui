@@ -7,7 +7,7 @@ const AddFeedback = props => {
 
   const handelPostSubmit = (e) => {
     e.preventDefault();
-    props.add({...feedback, createDate: new Date()});
+    props.add({ ...feedback, createDate: new Date(), student: props.student._id});
     props.close();
   }
 

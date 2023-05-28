@@ -3,30 +3,36 @@ import Navbar from "../../component/navbar/navbar.component";
 import ConfirmCard from "../../component/confirmCard/confirmCard.component";
 import useGetStudent from "../../data/user-data";
 import { Spinner } from "phosphor-react";
-import { createUser, deleteStudent } from "../../data/integration";
+import { createUser, deleteStudent, getAllConfirm } from "../../data/integration";
 
 const ConfirmRegister = () => {
-  const { studentInfo, loading, getStudents ,setState} = useGetStudent();
+  const [state, setState] = useState({ loading: false, students: [] });
+  const getConfirmStudents = () => {
+    setState({ loading: true, students: [] });
+    getAllConfirm().then(students => {
+      setState({ loading: false, students });
+    });
+  }
+  useEffect(() => {
+    getConfirmStudents();
+  }, []);
 
-  const onDelete = (studentId) =>{
-   deleteStudent(studentId).then(() => {
-     getStudents();
-   });
- }
-  const onConfirm = (student)=>{
-   createUser(student).then(()=>{
-    getStudents()
-   }).then(()=>{
-     setState(studentInfo?.confirm === true); 
-   });  
-    
- }
-console.log(studentInfo?.length);
+  const onDelete = (studentId) => {
+    deleteStudent(studentId).then(() => {
+      getConfirmStudents();
+    });
+  }
+  const onConfirm = (student) => {
+    createUser(student).then(() => {
+      getConfirmStudents();
+    })
+  };
+
   return (
     <div className="body">
       <Navbar />
       <div className="cards">
-        {loading ? (
+        {state.loading ? (
           <div
             style={{
               display: "flex",
@@ -36,16 +42,14 @@ console.log(studentInfo?.length);
           >
             <Spinner />
           </div>
-        ) : studentInfo?.length ? (
-          studentInfo
-            .filter((student) => student.confirm === false)
-            .map((student) => {
-              return <ConfirmCard student={student} onConfirm={onConfirm} onDelete={onDelete} />;
-            })
+        ) : state.students.length ? (
+          state.students.map((student) => {
+            return <ConfirmCard student={student} onConfirm={onConfirm} onDelete={onDelete} />;
+          })
         ) : (
           <div className="no-results">
             <p>No results found</p>
-            <img src="../../../images/2953962.jpg" alt=""/>
+            <img src="../../images/2953962.jpg" alt="" />
           </div>
         )}
       </div>

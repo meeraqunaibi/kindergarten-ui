@@ -8,7 +8,6 @@ const Students = (props) => {
     <div className="body">
       <Navbar />
       <div className="cards">
-        <h1>{props.d}</h1>
         <CardStd />
       </div>
     </div>

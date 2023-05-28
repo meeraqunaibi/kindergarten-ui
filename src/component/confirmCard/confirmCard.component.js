@@ -1,7 +1,7 @@
 import React from "react";
 import "./confirm.css";
-const ConfirmCard = (props) => {
 
+const ConfirmCard = (props) => {
   const { student } = props;
   return (
     <div className="card-con">

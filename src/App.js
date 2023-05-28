@@ -13,7 +13,6 @@ import Students from "./pages/students/students.page";
 import Profile from "./pages/profile/profile.page";
 import MemoryGame from "./pages/memory-game/memory-game.page";
 import UserProvider from "./component/providers/user-provider.component";
-import { getStudent } from "./data/integration";
 import ConfirmRegister from "./pages/confirm/confirm.page";
 function App() {
   return (
@@ -30,7 +29,7 @@ function App() {
         <Route path="/students" element={<Students />} />
         <Route path="/game" element={<MemoryGame />} />
         <Route path="/home-page" element={<HomePage />} />
-        <Route path='/student-page/:id' element={<Profile />} loader={getStudent}/>
+        <Route path='/student-page/:id' element={<Profile />} />
         <Route path='/confirm-register' element={<ConfirmRegister />} />
         <Route path='/register-student' element={<RegisterStudent />} />
         <Route path='/registration-ended' element={<RegistrationEnded />} />

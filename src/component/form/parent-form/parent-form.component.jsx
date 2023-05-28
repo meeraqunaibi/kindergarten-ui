@@ -3,7 +3,6 @@ import Input from "../../input/input.component";
 import Select from "../../select/select.component";
 
 const ParentInfo = ({ formData, setFormData, setTransportation }) => {
-
   return (
     <div className="reg-form">
       <div className="student-detail">
@@ -85,7 +84,7 @@ const ParentInfo = ({ formData, setFormData, setTransportation }) => {
         />
         <Input className="half-row"
           label="اسم الأب "
-          value={formData.fatherName}
+          value={formData.parent.fatherName}
           onChange={(event) => setFormData(
             {
               ...formData, parent: {
@@ -96,7 +95,7 @@ const ParentInfo = ({ formData, setFormData, setTransportation }) => {
           )} />
         <Input className="half-row"
           label="اسم الأم"
-          value={formData.motherName}
+          value={formData.parent.motherName}
           onChange={(event) => setFormData(
             {
               ...formData, parent: {
@@ -109,7 +108,7 @@ const ParentInfo = ({ formData, setFormData, setTransportation }) => {
           label="رقم هاتف الأم"
           max={10}
           min={0}
-          value={formData.motherMobileNum}
+          value={formData.parent.motherMobileNum}
           onChange={(event) => setFormData(
             {
               ...formData, parent: {
@@ -122,7 +121,7 @@ const ParentInfo = ({ formData, setFormData, setTransportation }) => {
           label="رقم هاتف الأب"
           max={10}
           min={0}
-          value={formData.fathermMobileNum}
+          value={formData.parent.fathermMobileNum}
           onChange={(event) => setFormData(
             {
               ...formData, parent: {
@@ -136,7 +135,7 @@ const ParentInfo = ({ formData, setFormData, setTransportation }) => {
           type="number"
           max={10}
           min={0}
-          value={formData.telephoneNum}
+          value={formData.parent.telephoneNum}
           onChange={(event) => setFormData(
             {
               ...formData, parent: {
@@ -148,7 +147,7 @@ const ParentInfo = ({ formData, setFormData, setTransportation }) => {
         <Input className="half-row"
           label="رابط صفحة الفيس بوك"
           type="link"
-          value={formData.facebookProfileLink}
+          value={formData.parent.facebookProfileLink}
           onChange={(event) => setFormData(
             {
               ...formData, parent: {
@@ -160,7 +159,7 @@ const ParentInfo = ({ formData, setFormData, setTransportation }) => {
         <Input className="half-row"
           label="مستوى التعليم للأم"
           type="text"
-          value={formData.fatherLevelOfEdu}
+          value={formData.parent.fatherLevelOfEdu}
           onChange={(event) => setFormData(
             {
               ...formData, parent: {
@@ -172,7 +171,7 @@ const ParentInfo = ({ formData, setFormData, setTransportation }) => {
         <Input className="half-row"
           label="مستوى التعليم للأب"
           type="text"
-          value={formData.motherLevelOfEdu}
+          value={formData.parent.motherLevelOfEdu}
           onChange={(event) => setFormData(
             {
               ...formData, parent: {

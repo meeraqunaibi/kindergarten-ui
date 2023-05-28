@@ -1,9 +1,6 @@
-import { useState } from 'react';
 import './feed-cart.css';
 
 const PostCart = (props) => {
-  console.log(props.data.addedBy);
-
   return (
     <div className="post-inf">
       <h3>{props.data.title}</h3>
