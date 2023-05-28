@@ -56,7 +56,6 @@ const getAllPost = () => {
     });
 };
 const createPost = (post) => {
-  console.log(post);
   return fetch(`http://127.0.0.1:3001/posts/add`, {
     method: "POST",
     headers: {
@@ -64,10 +63,7 @@ const createPost = (post) => {
     },
     body: JSON.stringify(post),
   })
-    .then((response) => {
-      const result = response.json();
-      console.log(result);
-    })
+    .then()
     .catch((error) => {
       alert(error.toString());
     });

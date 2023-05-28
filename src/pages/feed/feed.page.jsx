@@ -9,16 +9,17 @@ import "./feed.css";
 import { createPost, getAllPost } from "../../data/integration";
 import { UserContext } from "../../component/providers/user-provider.component";
 
-// const initialPost = {
-//   title: '',
-//   content: '',
-//   type: '',
-//   levelOfEducation: "",
-//   date: "",
-//   addedBy: userContext?.user
-// };
-const Feed = () => {  
-  const {post,setPost} = useContext(UserContext);
+const Feed = () => {
+  const { post, setPost, user } = useContext(UserContext);
+
+  const initialPost = {
+    title: '',
+    content: '',
+    type: '',
+    levelOfEducation: "",
+    date: "",
+    addedBy: user?.id
+  };
   const [isOpen, setIsOpen] = useState(false);
   const [posts, setPosts] = useState([]);
   const [tasks, setTasks] = useState([]);
@@ -28,21 +29,14 @@ const Feed = () => {
   }
 
   const addNewPost = () => {
-    const newposts = [{ ...posts, post}];
-    setPosts(newposts);
-    createPost(post);
-    togglePost();
-    setPost(post);
-  };
+    createPost(post).then(() => {
+      getAllPost().then(posts => setPosts(posts));
+    });
   
-  const addNewtask = () => {
-    const newtasks = [...tasks, tasks];
-    setTasks(newtasks);
-    createPost(tasks);
     togglePost();
-     setPost(post);
-
+    setPost(initialPost);
   };
+
   const handleInputChange = (value, key) => {
     setPost({
       ...post,
@@ -51,7 +45,8 @@ const Feed = () => {
   };
   useEffect(() => {
     getAllPost().then(posts => setPosts(posts));
-  }, [])
+  }, []);
+
   return (
     <div className="feed">
       <Navbar />
@@ -64,7 +59,7 @@ const Feed = () => {
               isOpen && <AddPost
                 close={() => setIsOpen(false)}
                 onAddpost={addNewPost}
-                onAddtask={addNewtask}
+                // onAddtask={addNewtask}
                 handleInputChange={handleInputChange}
                 post={post}
               />
@@ -76,10 +71,10 @@ const Feed = () => {
             <div className="post">
               {posts.map(post => (
                 <PostCart
-                data={post}
-                  // title={post.title}
-                  // content={post.content}
-                  // addedBy={post.addedBy}
+                  data={post}
+                // title={post.title}
+                // content={post.content}
+                // addedBy={post.addedBy}
                 />
               ))}
             </div>

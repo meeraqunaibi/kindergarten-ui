@@ -26,7 +26,8 @@ const UserProvider = (props) => {
     const password = e.target.password.value.trim();
     const loginResponsr = await loginUser(email, password);
     setUser(loginResponsr.user);
-    setTokent(loginResponsr.token)
+    setTokent(loginResponsr.token);
+    setPost({ ...post, addedBy: loginResponsr.user?.id})
     return loginResponsr.user;
   }
   return (

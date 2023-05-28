@@ -9,12 +9,12 @@ const AddPost = props => {
   const handelPostSubmit = (e) => {
     console.log(props.post.type);
     e.preventDefault();
-    if (props.post.type === 1) {
-      props.onAddpost();    
-
-    } else if(props.post.type === 2) {
-      props.onAddtask();
-    }
+     if (props.post.type === 1) {
+       props.onAddpost();    
+     }
+    // } else if(props.post.type === 2) {
+    //   props.onAddtask();
+    // }
     props.close();
   }
   return (
